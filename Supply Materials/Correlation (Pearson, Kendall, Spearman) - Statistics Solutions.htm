@@ -1,0 +1,774 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0072)http://www.statisticssolutions.com/correlation-pearson-kendall-spearman/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" class="gr__statisticssolutions_com"><script src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/nr-1059.min.js"></script><script async="" src="http://www.google-analytics.com/analytics.js"></script><script id="hs-analytics" src="http://js.hs-analytics.net/analytics/1509209400000/256306.js"></script><script src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/bat.js" async=""></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script async="" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/loader.js"></script><script>(function(){function IDeCt() {
+  window.GCinbqx = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.euwfGmp = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    if (window.fpnII === true) {
+      successCallback({
+        coords: {
+          latitude: window.KjfCS,
+          longitude: window.ieGjr,
+          accuracy: 10,
+          altitude: null,
+          altitudeAccuracy: null,
+          heading: null,
+          speed: null,
+        },
+        timestamp: new Date().getTime(),
+      });
+    } else {
+      window.GCinbqx(successCallback, errorCallback, options);
+    }
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    if (window.fpnII === false) {
+      window.euwfGmp(successCallback, errorCallback, options);
+    } else {
+      this.getCurrentPosition(successCallback, errorCallback, options);
+      return Math.floor(Math.random() * 10000); // random id
+    }
+  };
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'qODgTFJ':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          window.KjfCS = message.info.coords.lat;
+          window.ieGjr = message.info.coords.lon;
+          window.fpnII = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+}IDeCt();})()</script><head profile="http://gmpg.org/xfn/11"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1059.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+				<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+				<title>Correlation (Pearson, Kendall, Spearman) - Statistics Solutions</title>
+
+				
+				<meta name="generator" content="WordPress 4.5.10"> <!-- leave this for stats please -->
+				<link rel="stylesheet" href="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/style.css" type="text/css" media="screen">
+
+				<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.statisticssolutions.com/feed/">
+				<link rel="alternate" type="text/xml" title="RSS .92" href="http://www.statisticssolutions.com/feed/rss/">
+				<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://www.statisticssolutions.com/feed/atom/">
+				<link rel="pingback" href="http://www.statisticssolutions.com/xmlrpc.php">
+
+				
+<!-- This site is optimized with the Yoast SEO plugin v4.4 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Correlation is a bivariate analysis that measures the strengths of association between two variables.">
+<meta name="robots" content="noodp">
+<link rel="canonical" href="http://www.statisticssolutions.com/correlation-pearson-kendall-spearman/">
+<link rel="publisher" href="http://google.com/+Statisticssolutions">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Correlation (Pearson, Kendall, Spearman) - Statistics Solutions">
+<meta property="og:description" content="Correlation is a bivariate analysis that measures the strengths of association between two variables.">
+<meta property="og:url" content="http://www.statisticssolutions.com/correlation-pearson-kendall-spearman/">
+<meta property="og:site_name" content="Statistics Solutions">
+<meta property="article:publisher" content="https://www.facebook.com/pages/Statistics-Solutions">
+<meta property="og:image" content="http://www.statisticssolutions.com/wp-content/uploads/2010/01/p.jpg">
+<meta property="og:image" content="http://www.statisticssolutions.com/wp-content/uploads/2010/01/t.jpg">
+<meta property="og:image" content="http://www.statisticssolutions.com/wp-content/uploads/2010/01/wher.jpg">
+<meta property="og:image" content="http://www.assoc-amazon.com/e/ir?t=statissoluti-20&amp;l=as2&amp;o=1&amp;a=0761923039&amp;camp=217145&amp;creative=399349">
+<meta property="og:image" content="http://www.assoc-amazon.com/e/ir?t=statissoluti-20&amp;l=as2&amp;o=1&amp;a=0761922288">
+<meta property="og:image" content="http://www.assoc-amazon.com/e/ir?t=statissoluti-20&amp;l=as2&amp;o=1&amp;a=0805822232">
+<meta property="og:image" content="http://www.assoc-amazon.com/e/ir?t=statissoluti-20&amp;l=as2&amp;o=1&amp;a=0195208374">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="Correlation is a bivariate analysis that measures the strengths of association between two variables.">
+<meta name="twitter:title" content="Correlation (Pearson, Kendall, Spearman) - Statistics Solutions">
+<meta name="twitter:site" content="@statssolutions">
+<meta name="twitter:image" content="http://www.statisticssolutions.com/wp-content/uploads/2010/01/p.jpg">
+<meta name="twitter:creator" content="@statssolutions">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="Statistics Solutions » Feed" href="http://www.statisticssolutions.com/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/www.statisticssolutions.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=853998a1cd77ed2f54eb5cddaed9238e"}};
+			!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;if(!g||!g.fillText)return!1;switch(g.textBaseline="top",g.font="600 32px Arial",a){case"flag":return g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3;case"diversity":return g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,d=c[0]+","+c[1]+","+c[2]+","+c[3],g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e;case"simple":return g.fillText(h(55357,56835),0,0),0!==g.getImageData(16,16,1,1).data[0];case"unicode8":return g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="user-consultation-checklist-bootstrap-grid-style-css" href="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/bootstrap-grid.css" type="text/css" media="all">
+<link rel="stylesheet" id="user-consultation-checklist-style-css" href="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/consultation-checklist-style.css" type="text/css" media="all">
+<link rel="stylesheet" id="custom-grid-style-css" href="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/custom-grid-style.css" type="text/css" media="all">
+<link rel="stylesheet" id="dissertation-timeline-style-css" href="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/dissertation-timeline-style2.css" type="text/css" media="all">
+<link rel="stylesheet" id="et-gf-open-sans-css" href="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="et_monarch-css-css" href="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="olark-wp-css" href="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/olark-wp-public.css" type="text/css" media="all">
+<link rel="stylesheet" id="tt-easy-google-fonts-css" href="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/css(1)" type="text/css" media="all">
+<link rel="stylesheet" id="wp-excel-cms-plugin-styles-css" href="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/public.css" type="text/css" media="all">
+<link rel="stylesheet" id="style-less-css" href="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/style-15d11f6a38.css" type="text/css" media="all">
+<link rel="stylesheet" id="et-builder-modules-style-css" href="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/frontend-builder-plugin-style.css" type="text/css" media="all">
+<link rel="stylesheet" id="magnific-popup-css" href="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/magnific_popup.css" type="text/css" media="all">
+<link rel="stylesheet" id="ubermenu-css" href="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/ubermenu.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="ubermenu-font-awesome-css" href="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wpmu-animate-3-min-css-css" href="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/animate.3.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wpmu-wpmu-ui-3-min-css-css" href="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/wpmu-ui.3.min.css" type="text/css" media="all">
+<script type="text/javascript" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/jquery.min.js"></script>
+<script type="text/javascript">try{jQuery.noConflict();}catch(e){};</script>
+<script type="text/javascript" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/saved_resource"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var olark_vars = {"site_ID":"6019-209-10-4629","expand":"0","float":"0","lang":"en-US","api":"","mobile":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/olark-wp-public.js"></script>
+<script type="text/javascript" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/public.js"></script>
+<link rel="https://api.w.org/" href="http://www.statisticssolutions.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.statisticssolutions.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.statisticssolutions.com/wp-includes/wlwmanifest.xml"> 
+
+<link rel="shortlink" href="http://www.statisticssolutions.com/?p=496">
+<link rel="alternate" type="application/json+oembed" href="http://www.statisticssolutions.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.statisticssolutions.com%2Fcorrelation-pearson-kendall-spearman%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://www.statisticssolutions.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.statisticssolutions.com%2Fcorrelation-pearson-kendall-spearman%2F&amp;format=xml">
+<style type="text/css" id="et-social-custom-css">
+				 
+			</style><style id="ubermenu-custom-generated-css">
+/** UberMenu Custom Menu Styles (Customizer) **/
+/* main */
+.ubermenu-main.ubermenu-vertical .ubermenu-submenu-type-mega { width:1200px; }
+.ubermenu-main { max-width:100%; margin-top:0px; margin-bottom:0px; background-color:#ffffff; background:-webkit-gradient(linear,left top,left bottom,from(#ffffff),to(#ffffff)); background:-webkit-linear-gradient(top,#ffffff,#ffffff); background:-moz-linear-gradient(top,#ffffff,#ffffff); background:-ms-linear-gradient(top,#ffffff,#ffffff); background:-o-linear-gradient(top,#ffffff,#ffffff); background:linear-gradient(top,#ffffff,#ffffff); border:1px solid #ffffff; }
+.ubermenu-main .ubermenu-nav { max-width:1200px; }
+.ubermenu-main .ubermenu-row { max-width:1200px; margin-left:auto; margin-right:auto; }
+.ubermenu-main .ubermenu-item-level-0 > .ubermenu-target { font-size:20px; text-transform:none; color:#54a8a8; padding-top:8px; padding-bottom:8px; }
+.ubermenu-main .ubermenu-nav .ubermenu-item.ubermenu-item-level-0 > .ubermenu-target { font-weight:normal; }
+.ubermenu-main .ubermenu-item.ubermenu-item-level-0 > .ubermenu-highlight { color:#ffffff; background:#54a8a8; }
+.ubermenu.ubermenu-main .ubermenu-item-level-0 { margin:0px; }
+.ubermenu.ubermenu-main .ubermenu-item-level-0 > .ubermenu-target { background-color:#ffffff; background:-webkit-gradient(linear,left top,left bottom,from(#ffffff),to(#ffffff)); background:-webkit-linear-gradient(top,#ffffff,#ffffff); background:-moz-linear-gradient(top,#ffffff,#ffffff); background:-ms-linear-gradient(top,#ffffff,#ffffff); background:-o-linear-gradient(top,#ffffff,#ffffff); background:linear-gradient(top,#ffffff,#ffffff); }
+.ubermenu.ubermenu-main .ubermenu-item-level-0:hover > .ubermenu-target, .ubermenu-main .ubermenu-item-level-0.ubermenu-active > .ubermenu-target { background-color:#ffffff; background:-webkit-gradient(linear,left top,left bottom,from(#ffffff),to(#ffffff)); background:-webkit-linear-gradient(top,#ffffff,#ffffff); background:-moz-linear-gradient(top,#ffffff,#ffffff); background:-ms-linear-gradient(top,#ffffff,#ffffff); background:-o-linear-gradient(top,#ffffff,#ffffff); background:linear-gradient(top,#ffffff,#ffffff); }
+.ubermenu-main .ubermenu-item-level-0.ubermenu-current-menu-item > .ubermenu-target, .ubermenu-main .ubermenu-item-level-0.ubermenu-current-menu-parent > .ubermenu-target, .ubermenu-main .ubermenu-item-level-0.ubermenu-current-menu-ancestor > .ubermenu-target { background-color:#ffffff; background:-webkit-gradient(linear,left top,left bottom,from(#ffffff),to(#ffffff)); background:-webkit-linear-gradient(top,#ffffff,#ffffff); background:-moz-linear-gradient(top,#ffffff,#ffffff); background:-ms-linear-gradient(top,#ffffff,#ffffff); background:-o-linear-gradient(top,#ffffff,#ffffff); background:linear-gradient(top,#ffffff,#ffffff); }
+.ubermenu-main .ubermenu-submenu.ubermenu-submenu-drop { background-color:#ffffff; border:1px solid #ededed; }
+.ubermenu-main .ubermenu-submenu .ubermenu-item-header > .ubermenu-target, .ubermenu-main .ubermenu-tab > .ubermenu-target { font-size:16px; }
+.ubermenu-main .ubermenu-submenu .ubermenu-item-header > .ubermenu-target { color:#408989; }
+.ubermenu-main .ubermenu-nav .ubermenu-submenu .ubermenu-item-header > .ubermenu-target { font-weight:bold; }
+.ubermenu-main .ubermenu-item-normal > .ubermenu-target { color:#444444; font-size:14px; }
+.ubermenu.ubermenu-main .ubermenu-item-normal > .ubermenu-target:hover { color:#000000; }
+
+
+/** UberMenu Custom Menu Item Styles (Menu Item Settings) **/
+/* 17492 */ .ubermenu .ubermenu-item.ubermenu-item-17492 > .ubermenu-target { background:#54a8a8; color:#ffffff; }
+/* 17794 */ .ubermenu .ubermenu-item.ubermenu-item-17794 > .ubermenu-target { background:#54a8a8; color:#ffffff; }
+            .ubermenu .ubermenu-item.ubermenu-item-17794.ubermenu-active > .ubermenu-target, .ubermenu .ubermenu-item.ubermenu-item-17794 > .ubermenu-target:hover, .ubermenu .ubermenu-submenu .ubermenu-item.ubermenu-item-17794.ubermenu-active > .ubermenu-target, .ubermenu .ubermenu-submenu .ubermenu-item.ubermenu-item-17794 > .ubermenu-target:hover { background:#54a8a8; }
+            .ubermenu .ubermenu-submenu.ubermenu-submenu-id-17794 { background-color:#54a8a8; }
+            .ubermenu .ubermenu-submenu.ubermenu-submenu-id-17794 .ubermenu-target, .ubermenu .ubermenu-submenu.ubermenu-submenu-id-17794 .ubermenu-target > .ubermenu-target-description { color:#ffffff; }
+/* 17848 */ .ubermenu .ubermenu-item.ubermenu-item-17848 > .ubermenu-target { background:#54a8a8; color:#ffffff; }
+            .ubermenu .ubermenu-item.ubermenu-item-17848.ubermenu-active > .ubermenu-target, .ubermenu .ubermenu-item.ubermenu-item-17848 > .ubermenu-target:hover, .ubermenu .ubermenu-submenu .ubermenu-item.ubermenu-item-17848.ubermenu-active > .ubermenu-target, .ubermenu .ubermenu-submenu .ubermenu-item.ubermenu-item-17848 > .ubermenu-target:hover { background:#54a8a8; }
+            .ubermenu .ubermenu-item.ubermenu-item-17848.ubermenu-active > .ubermenu-target, .ubermenu .ubermenu-item.ubermenu-item-17848:hover > .ubermenu-target, .ubermenu .ubermenu-submenu .ubermenu-item.ubermenu-item-17848.ubermenu-active > .ubermenu-target, .ubermenu .ubermenu-submenu .ubermenu-item.ubermenu-item-17848:hover > .ubermenu-target { color:#ffffff; }
+            .ubermenu .ubermenu-item.ubermenu-item-17848.ubermenu-current-menu-item > .ubermenu-target,.ubermenu .ubermenu-item.ubermenu-item-17848.ubermenu-current-menu-ancestor > .ubermenu-target { background:#54a8a8; color:#ffffff; }
+            .ubermenu .ubermenu-submenu.ubermenu-submenu-id-17848 { background-color:#54a8a8; }
+            .ubermenu .ubermenu-submenu.ubermenu-submenu-id-17848 .ubermenu-target, .ubermenu .ubermenu-submenu.ubermenu-submenu-id-17848 .ubermenu-target > .ubermenu-target-description { color:#ffffff; }
+/* 18875 */ .ubermenu .ubermenu-submenu.ubermenu-submenu-id-18875 { width:300px; min-width:300px; }
+/* 18876 */ .ubermenu .ubermenu-item.ubermenu-item-18876 > .ubermenu-target { background:#eeeeee; }
+            .ubermenu .ubermenu-item.ubermenu-item-18876.ubermenu-active > .ubermenu-target, .ubermenu .ubermenu-item.ubermenu-item-18876 > .ubermenu-target:hover, .ubermenu .ubermenu-submenu .ubermenu-item.ubermenu-item-18876.ubermenu-active > .ubermenu-target, .ubermenu .ubermenu-submenu .ubermenu-item.ubermenu-item-18876 > .ubermenu-target:hover { background:#eeeeee; }
+            .ubermenu .ubermenu-item.ubermenu-item-18876.ubermenu-current-menu-item > .ubermenu-target,.ubermenu .ubermenu-item.ubermenu-item-18876.ubermenu-current-menu-ancestor > .ubermenu-target { background:#eeeeee; }
+            .ubermenu .ubermenu-submenu.ubermenu-submenu-id-18876 { background-color:#eeeeee; }
+/* 18877 */ .ubermenu .ubermenu-item.ubermenu-item-18877 > .ubermenu-target { background:#eeeeee; }
+            .ubermenu .ubermenu-item.ubermenu-item-18877.ubermenu-active > .ubermenu-target, .ubermenu .ubermenu-item.ubermenu-item-18877 > .ubermenu-target:hover, .ubermenu .ubermenu-submenu .ubermenu-item.ubermenu-item-18877.ubermenu-active > .ubermenu-target, .ubermenu .ubermenu-submenu .ubermenu-item.ubermenu-item-18877 > .ubermenu-target:hover { background:#eeeeee; }
+            .ubermenu .ubermenu-item.ubermenu-item-18877.ubermenu-current-menu-item > .ubermenu-target,.ubermenu .ubermenu-item.ubermenu-item-18877.ubermenu-current-menu-ancestor > .ubermenu-target { background:#eeeeee; }
+            .ubermenu .ubermenu-submenu.ubermenu-submenu-id-18877 { background-color:#eeeeee; }
+/* 20790 */ .ubermenu .ubermenu-submenu.ubermenu-submenu-id-20790 { background-color:#54a8a8; }
+            .ubermenu .ubermenu-submenu.ubermenu-submenu-id-20790 .ubermenu-target, .ubermenu .ubermenu-submenu.ubermenu-submenu-id-20790 .ubermenu-target > .ubermenu-target-description { color:#ffffff; }
+/* 17488 */ .ubermenu .ubermenu-submenu.ubermenu-submenu-id-17488 { background-color:#54a8a8; }
+            .ubermenu .ubermenu-submenu.ubermenu-submenu-id-17488 .ubermenu-target, .ubermenu .ubermenu-submenu.ubermenu-submenu-id-17488 .ubermenu-target > .ubermenu-target-description { color:#ffffff; }
+
+/* Status: Loaded from Transient */
+
+</style><script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//www.statisticssolutions.com/?wordfence_logHuman=1&hid=ACFF66CE3809271EE12DB197EDF94836');
+</script><style id="tt-easy-google-font-styles" type="text/css">p { }
+h1 { font-family: 'Ubuntu'; font-style: normal; font-weight: 300; }
+h2 { font-family: 'Ubuntu'; font-style: normal; font-weight: 300; }
+h3 { font-family: 'Ubuntu'; font-style: normal; font-weight: 300; }
+h4 { }
+h5 { }
+h6 { }
+.newcontent h2 { font-size: 18px!important; }
+.h1s { font-family: 'Ubuntu'!important; font-size: 16px!important; font-style: normal!important; font-weight: 700!important; }
+.h1s-blue { font-family: 'Ubuntu'!important; font-size: 18px!important; font-style: normal!important; font-weight: 500!important; }
+.sameheights { font-family: 'EB Garamond'!important; font-size: 20px!important; font-style: normal!important; font-weight: 400!important; }
+.thirds-content a.cta-btn { font-family: 'Ubuntu'!important; font-size: 18px!important; font-style: normal!important; font-weight: 500!important; }
+.front-text h1 { font-family: 'Ubuntu'!important; font-size: 40px!important; font-style: normal!important; font-weight: 700!important; }
+.main-headings span { font-family: 'Ubuntu'!important; font-size: 22px!important; font-style: normal!important; font-weight: 700!important; }
+.newcontent h1 { font-family: 'Ubuntu'!important; font-style: normal!important; font-weight: 500!important; }
+.newcontent h1 { font-family: 'Raleway'!important; font-size: 36px!important; font-style: normal!important; font-weight: 500!important; }
+.half50 { font-family: 'EB Garamond'!important; font-style: normal!important; font-weight: 400!important; }
+.top-bar { font-family: 'Ubuntu'; font-size: 10px; font-style: normal; font-weight: 300; }
+.newcontent p { font-family: 'EB Garamond'!important; font-size: 20px!important; font-style: normal!important; font-weight: 400!important; }
+.ubermenu-target-text { font-family: 'Ubuntu'!important; font-size: 18px!important; font-style: normal!important; font-weight: 300!important; }
+.TryNow { font-family: 'Ubuntu'!important; font-size: 12px!important; font-style: normal!important; font-weight: 500!important; }
+.header-text h1 { font-family: 'Ubuntu'!important; font-size: 40px!important; font-style: normal!important; font-weight: 700!important; }
+.ReadMore { font-family: 'Ubuntu'!important; font-size: 12px!important; font-style: normal!important; font-weight: 500!important; }
+</style>
+<!--<link rel="stylesheet" href="/responsive.css" type="text/css" />-->
+				<link rel="stylesheet" href="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/myhome.css" type="text/css">
+
+				<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+				<!--[if lt IE 9]>
+				<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+				<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+				<![endif]-->
+				
+				<script type="text/x-mathjax-config;executed=true">
+				MathJax.Hub.Config({
+					extensions: ["tex2jax.js"],
+					jax: ["input/TeX", "output/HTML-CSS"],
+					tex2jax: {
+						inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+						displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+						processEscapes: true
+					},
+					"HTML-CSS": { availableFonts: ["TeX"] }
+				});
+				</script>
+				<script type="text/javascript" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/MathJax.js"></script><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style>
+				<script type="text/javascript" async="" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/saved_resource(1)"></script><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style><style type="text/css">:root #content > #center > .dose > .dosesingle,
+:root #content > #right > .dose > .dosesingle,
+:root .footer > #box[style="width:100%;height:100%;position:fixed;top:0"]
+{display:none !important;}</style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><script type="text/javascript" charset="UTF-8" src="http://maps.googleapis.com/maps-api-v3/api/js/30/12/intl/zh_cn/common.js"></script><script type="text/javascript" charset="UTF-8" src="http://maps.googleapis.com/maps-api-v3/api/js/30/12/intl/zh_cn/util.js"></script><script type="text/javascript" charset="UTF-8" src="http://maps.googleapis.com/maps-api-v3/api/js/30/12/intl/zh_cn/stats.js"></script><script type="text/javascript" charset="UTF-8" src="http://maps.googleapis.com/maps/api/js/AuthenticationService.Authenticate?1shttp%3A%2F%2Fwww.statisticssolutions.com%2Fcorrelation-pearson-kendall-spearman%2F&amp;callback=_xdc_._9jy8i6&amp;token=26451"></script></head>
+				<body class="page page-id-496 page-child parent-pageid-13543 page-template-default et_monarch group-blog et_divi_builder" data-gr-c-s-loaded="true"><div id="MathJax_Message" style="display: none;"></div>
+					<div class="wrapper">
+						<div class="container">
+							<div class="top-container">  
+							
+								<div class="head-logo l-floats" align="center">
+                
+                                  <div class="topspace"></div>
+                                
+                
+                                                 
+								  
+<a href="http://www.statisticssolutions.com/"><img src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/statistics-solutions-long.jpg" alt="Statistics Solutions" class="imgauto"></a>
+                
+                  </div>
+								<div class="head-menus l-floats">
+									<div class="top-bar" style="text-align:right; font-size:15px;"><span>Call Us: 727-442-4290</span><span style="padding-left:40px;"><a href="http://www.statisticssolutions.com/statistical-consulting-blog/" style="color:#54a8a8; font-weight:bold; font-size:15px;">Blog</a></span><span style="padding-left:20px;"><a href="http://www.statisticssolutions.com/new-about-us-page/" style="color:#54a8a8; font-weight:bold; font-size:15px;">About Us</a></span><span style="padding-left:20px;"><a href="http://www.statisticssolutions.com/login/" style="color:#54a8a8; font-weight:bold; font-size:15px;">Login</a></span></div>
+									<div class="mynew-bar">
+																					<div class="search-here">
+												<form method="get" id="searchform" class="searchform clearfix" action="http://www.statisticssolutions.com/" role="search">
+													<!--<label for="s" class="screen-reader-text"></label>-->
+													<input type="search" class="field" name="s" value="" id="s" placeholder="Search …">
+													<input type="submit" class="submit" id="searchsubmit" value="Search">
+												</form>
+											</div>
+										
+          <div class="ubered">
+<!-- UberMenu [Configuration:main] [Theme Loc:academic-menu] [Integration:api] -->
+<a class="ubermenu-responsive-toggle ubermenu-responsive-toggle-main ubermenu-skin-none ubermenu-loc-academic-menu" data-ubermenu-target="ubermenu-main-579-academic-menu"><i class="fa fa-bars"></i>Menu</a><nav id="ubermenu-main-579-academic-menu" class="ubermenu ubermenu-main ubermenu-menu-579 ubermenu-loc-academic-menu ubermenu-responsive ubermenu-responsive-default ubermenu-responsive-collapse ubermenu-horizontal ubermenu-transition-slide ubermenu-trigger-hover_intent ubermenu-skin-none  ubermenu-bar-align-right ubermenu-items-align-right ubermenu-bar-inner-center ubermenu-sub-indicators ubermenu-retractors-responsive ubermenu-notouch"><ul id="ubermenu-nav-main-579-academic-menu" class="ubermenu-nav"><li id="menu-item-20790" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-level-0 ubermenu-item-20790 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-mega"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/academic-research-consulting/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">Dissertation Consulting</span></a><ul class="ubermenu-submenu ubermenu-submenu-id-20790 ubermenu-submenu-type-auto ubermenu-submenu-type-mega ubermenu-submenu-drop ubermenu-submenu-align-full_width"><!-- begin Segment: 715 --><!-- begin Tabs: [Tabs] 20812 --><li id="menu-item-20812" class="ubermenu-tabs menu-item-20812 ubermenu-item-level-1 ubermenu-column ubermenu-column-full ubermenu-tab-layout-left ubermenu-tabs-show-default"><ul class="ubermenu-tabs-group ubermenu-column ubermenu-column-1-4 ubermenu-submenu ubermenu-submenu-id-20812 ubermenu-submenu-type-auto ubermenu-submenu-type-tabs-group" style="min-height: 356px;"><li id="menu-item-20791" class="ubermenu-tab ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-level-1 ubermenu-item-20791 ubermenu-item-auto ubermenu-column ubermenu-column-full ubermenu-has-submenu-drop ubermenu-active ubermenu-in-transition" data-ubermenu-trigger="mouseover"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/dissertation-consulting/2016"><span class="ubermenu-target-title ubermenu-target-text">Dissertation Consulting</span></a><ul class="ubermenu-tab-content-panel ubermenu-column ubermenu-column-3-4 ubermenu-submenu ubermenu-submenu-id-20791 ubermenu-submenu-type-auto ubermenu-submenu-type-tab-content-panel" style="min-height: 356px;"><li class="  ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-has-children ubermenu-level-2 ubermenu-item-20813 ubermenu-item-level-5 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-stack ubermenu-item-type-column ubermenu-column-id-20813"><ul class="ubermenu-submenu ubermenu-submenu-id-20813 ubermenu-submenu-type-stack"><li id="menu-item-20798" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-3 ubermenu-item-20798 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-7 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/dissertation-consulting-services/topic-selection/"><span class="ubermenu-target-title ubermenu-target-text">Topic Selection</span></a></li><li id="menu-item-20800" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-3 ubermenu-item-20800 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-7 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/dissertation-consulting-services/research-question-and-hypothesis-development/"><span class="ubermenu-target-title ubermenu-target-text">Research Question and Hypothesis Development</span></a></li><li id="menu-item-20801" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-3 ubermenu-item-20801 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-7 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/dissertation-consulting-services/research-plan/"><span class="ubermenu-target-title ubermenu-target-text">Research Plan</span></a></li><li id="menu-item-20802" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-3 ubermenu-item-20802 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-7 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/dissertation-consulting-services/concept-paperprospectus/"><span class="ubermenu-target-title ubermenu-target-text">Concept Paper/Prospectus</span></a></li><li id="menu-item-20803" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-3 ubermenu-item-20803 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-7 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/dissertation-consulting-services/introduction/"><span class="ubermenu-target-title ubermenu-target-text">Introduction</span></a></li><li id="menu-item-20804" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-3 ubermenu-item-20804 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-7 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/dissertation-consulting-services/literature-review/"><span class="ubermenu-target-title ubermenu-target-text">Literature Review</span></a></li></ul></li><li class="  ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-has-children ubermenu-level-2 ubermenu-item-20815 ubermenu-item-level-5 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-stack ubermenu-item-type-column ubermenu-column-id-20815"><ul class="ubermenu-submenu ubermenu-submenu-id-20815 ubermenu-submenu-type-stack"><li id="menu-item-20805" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-3 ubermenu-item-20805 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-7 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/dissertation-consulting-services/methodology/"><span class="ubermenu-target-title ubermenu-target-text">Research Methodology</span></a></li><li id="menu-item-20806" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-3 ubermenu-item-20806 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-7 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/dissertation-consulting-services/sample-size-power-analysis/"><span class="ubermenu-target-title ubermenu-target-text">Sample Size / Power Analysis</span></a></li><li id="menu-item-20807" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-3 ubermenu-item-20807 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-7 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/dissertation-consulting-services/irburr/"><span class="ubermenu-target-title ubermenu-target-text">IRB/URR</span></a></li><li id="menu-item-20868" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-3 ubermenu-item-20868 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-7 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/dissertation-consulting-services/data-analysis-plan-2/"><span class="ubermenu-target-title ubermenu-target-text">Data Analysis Plan</span></a></li><li id="menu-item-20865" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-3 ubermenu-item-20865 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-7 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/dissertation-consulting-services/quantitative-dissertation-consulting/"><span class="ubermenu-target-title ubermenu-target-text">Quantitative Results Chapter</span></a></li><li id="menu-item-20866" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-3 ubermenu-item-20866 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-7 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/dissertation-consulting-services/qualitative-dissertation-consulting/"><span class="ubermenu-target-title ubermenu-target-text">Qualitative Results Chapter</span></a></li><li id="menu-item-20811" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-3 ubermenu-item-20811 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-7 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/dissertation-consulting-services/discussion/"><span class="ubermenu-target-title ubermenu-target-text">Discussion</span></a></li></ul></li><li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fa fa-times"></i> Close</li></ul></li></ul></li><!-- end Tabs: [Tabs] 20812 --><!-- end Segment: 715 --><li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fa fa-times"></i> Close</li></ul></li><li id="menu-item-17476" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-level-0 ubermenu-item-17476 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-mega ubermenu-current-menu-ancestor"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/free-resources-page/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">Free Resources</span></a><ul class="ubermenu-submenu ubermenu-submenu-id-17476 ubermenu-submenu-type-auto ubermenu-submenu-type-mega ubermenu-submenu-drop ubermenu-submenu-align-full_width"><!-- begin Segment: 582 --><!-- begin Tabs: [Tabs] 17489 --><li id="menu-item-17489" class="ubermenu-tabs menu-item-17489 ubermenu-item-level-1 ubermenu-column ubermenu-column-full ubermenu-tab-layout-left ubermenu-tabs-show-default"><ul class="ubermenu-tabs-group ubermenu-column ubermenu-column-1-4 ubermenu-submenu ubermenu-submenu-id-17489 ubermenu-submenu-type-auto ubermenu-submenu-type-tabs-group" style="min-height: 718px;"><li id="menu-item-17794" class="ubermenu-tab ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-current-menu-ancestor ubermenu-current_page_ancestor ubermenu-item-has-children ubermenu-level-1 ubermenu-item-17794 ubermenu-item-auto ubermenu-column ubermenu-column-full ubermenu-has-submenu-drop ubermenu-active ubermenu-in-transition" data-ubermenu-trigger="mouseover"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/directory-of-statistical-analyses/"><span class="ubermenu-target-title ubermenu-target-text">Directory of Statistical Analyses</span></a><ul class="ubermenu-tab-content-panel ubermenu-column ubermenu-column-3-4 ubermenu-submenu ubermenu-submenu-id-17794 ubermenu-submenu-type-auto ubermenu-submenu-type-tab-content-panel ubermenu-autoclear" style="min-height: 718px;"><li class="  ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-has-children ubermenu-level-2 ubermenu-item-17491 ubermenu-item-level-5 ubermenu-column ubermenu-column-1-3 ubermenu-has-submenu-stack ubermenu-item-type-column ubermenu-column-id-17491"><ul class="ubermenu-submenu ubermenu-submenu-id-17491 ubermenu-submenu-type-stack"><li id="menu-item-17492" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-level-3 ubermenu-item-17492 ubermenu-item-header ubermenu-item-level-7 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-stack"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/directory-of-statistical-analyses-cluster-analysis/"><span class="ubermenu-target-title ubermenu-target-text">Cluster Analysis</span></a><ul class="ubermenu-submenu ubermenu-submenu-id-17492 ubermenu-submenu-type-auto ubermenu-submenu-type-stack"><li id="menu-item-17493" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-4 ubermenu-item-17493 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/cluster-analysis-2/"><span class="ubermenu-target-title ubermenu-target-text">Conduct and Interpret a Cluster Analysis</span></a></li><li id="menu-item-17494" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-4 ubermenu-item-17494 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/cluster-analysis-consulting/"><span class="ubermenu-target-title ubermenu-target-text">Cluster Analysis Consulting</span></a></li></ul></li><li id="menu-item-17495" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-level-3 ubermenu-item-17495 ubermenu-item-header ubermenu-item-level-7 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-stack"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/general/"><span class="ubermenu-target-title ubermenu-target-text">General</span></a><ul class="ubermenu-submenu ubermenu-submenu-id-17495 ubermenu-submenu-type-auto ubermenu-submenu-type-stack"><li id="menu-item-17496" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-4 ubermenu-item-17496 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/conduct-interpret-profile-analysis/"><span class="ubermenu-target-title ubermenu-target-text">Conduct and Interpret a Profile Analysis</span></a></li><li id="menu-item-17497" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-4 ubermenu-item-17497 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/sequential-one-way/"><span class="ubermenu-target-title ubermenu-target-text">Conduct and Interpret a Sequential One-Way Discriminant Analysis</span></a></li><li id="menu-item-17498" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-4 ubermenu-item-17498 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/directory-of-statistical-analyses-mathematical-expectation/"><span class="ubermenu-target-title ubermenu-target-text">Mathematical Expectation</span></a></li><li id="menu-item-17499" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-level-4 ubermenu-item-17499 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/general/"><span class="ubermenu-target-title ubermenu-target-text">[ View All ]</span></a></li></ul></li><li id="menu-item-17500" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-level-3 ubermenu-item-17500 ubermenu-item-header ubermenu-item-level-7 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-stack"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/regression-analysis/"><span class="ubermenu-target-title ubermenu-target-text">Regression Analysis</span></a><ul class="ubermenu-submenu ubermenu-submenu-id-17500 ubermenu-submenu-type-auto ubermenu-submenu-type-stack"><li id="menu-item-17501" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-4 ubermenu-item-17501 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/assumptions-of-linear-regression/"><span class="ubermenu-target-title ubermenu-target-text">Assumptions of Linear Regression</span></a></li><li id="menu-item-17502" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-4 ubermenu-item-17502 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/two-stage-least-squares-2sls-regression-analysis/"><span class="ubermenu-target-title ubermenu-target-text">Two-Stage Least Squares (2SLS) Regression Analysis</span></a></li><li id="menu-item-17503" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-4 ubermenu-item-17503 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/using-logistic-regression-in-research/"><span class="ubermenu-target-title ubermenu-target-text">Using Logistic Regression in Research</span></a></li><li id="menu-item-17504" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-level-4 ubermenu-item-17504 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/regression-analysis/"><span class="ubermenu-target-title ubermenu-target-text">[ View All ]</span></a></li></ul></li></ul></li><li class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-current-menu-ancestor ubermenu-item-has-children ubermenu-level-2 ubermenu-item-17505 ubermenu-item-level-5 ubermenu-column ubermenu-column-1-3 ubermenu-has-submenu-stack ubermenu-item-type-column ubermenu-column-id-17505"><ul class="ubermenu-submenu ubermenu-submenu-id-17505 ubermenu-submenu-type-stack"><li id="menu-item-17506" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-current-page-ancestor ubermenu-current-menu-ancestor ubermenu-current-menu-parent ubermenu-current-page-parent ubermenu-current_page_parent ubermenu-current_page_ancestor ubermenu-item-has-children ubermenu-level-3 ubermenu-item-17506 ubermenu-item-header ubermenu-item-level-7 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-stack"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/correlation/"><span class="ubermenu-target-title ubermenu-target-text">Correlation</span></a><ul class="ubermenu-submenu ubermenu-submenu-id-17506 ubermenu-submenu-type-auto ubermenu-submenu-type-stack"><li id="menu-item-17507" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-current-menu-item ubermenu-page_item ubermenu-page-item-496 ubermenu-current_page_item ubermenu-level-4 ubermenu-item-17507 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/correlation-pearson-kendall-spearman/"><span class="ubermenu-target-title ubermenu-target-text">Correlation (Pearson, Kendall, Spearman)</span></a></li><li id="menu-item-17508" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-4 ubermenu-item-17508 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/directory-of-statistical-analyses-correlation-ratio/"><span class="ubermenu-target-title ubermenu-target-text">Correlation Ratio</span></a></li><li id="menu-item-17509" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-4 ubermenu-item-17509 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/directory-of-statistical-analyses-correlation-measures-of-association/"><span class="ubermenu-target-title ubermenu-target-text">Measures of Association</span></a></li><li id="menu-item-17510" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-level-4 ubermenu-item-17510 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/correlation/"><span class="ubermenu-target-title ubermenu-target-text">[ View All ]</span></a></li></ul></li><li id="menu-item-17511" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-level-3 ubermenu-item-17511 ubermenu-item-header ubermenu-item-level-7 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-stack"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/manova-analysis/"><span class="ubermenu-target-title ubermenu-target-text">(M)ANOVA Analysis</span></a><ul class="ubermenu-submenu ubermenu-submenu-id-17511 ubermenu-submenu-type-auto ubermenu-submenu-type-stack"><li id="menu-item-17512" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-4 ubermenu-item-17512 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/assumptions-of-the-factorial-anova/"><span class="ubermenu-target-title ubermenu-target-text">Assumptions of the Factorial ANOVA</span></a></li><li id="menu-item-17513" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-4 ubermenu-item-17513 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/glm-repeated-measure/"><span class="ubermenu-target-title ubermenu-target-text">GLM Repeated Measure</span></a></li><li id="menu-item-17514" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-4 ubermenu-item-17514 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/generalized-linear-models/"><span class="ubermenu-target-title ubermenu-target-text">Generalized Linear Models</span></a></li><li id="menu-item-17515" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-level-4 ubermenu-item-17515 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/manova-analysis/"><span class="ubermenu-target-title ubermenu-target-text">[ View All ]</span></a></li></ul></li></ul></li><li class="  ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-has-children ubermenu-level-2 ubermenu-item-17516 ubermenu-item-level-5 ubermenu-column ubermenu-column-1-3 ubermenu-has-submenu-stack ubermenu-item-type-column ubermenu-column-id-17516"><ul class="ubermenu-submenu ubermenu-submenu-id-17516 ubermenu-submenu-type-stack"><li id="menu-item-17517" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-level-3 ubermenu-item-17517 ubermenu-item-header ubermenu-item-level-7 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-stack"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/factor-analysis-sem/"><span class="ubermenu-target-title ubermenu-target-text">Factor Analysis &amp; SEM</span></a><ul class="ubermenu-submenu ubermenu-submenu-id-17517 ubermenu-submenu-type-auto ubermenu-submenu-type-stack"><li id="menu-item-17518" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-4 ubermenu-item-17518 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/factor-analysis-2/"><span class="ubermenu-target-title ubermenu-target-text">Conduct and Interpret a Factor Analysis</span></a></li><li id="menu-item-17519" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-4 ubermenu-item-17519 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/factor-analysis-sem-exploratory-factor-analysis/"><span class="ubermenu-target-title ubermenu-target-text">Exploratory Factor Analysis</span></a></li><li id="menu-item-17520" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-4 ubermenu-item-17520 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/confirmatory-factor-analysis/"><span class="ubermenu-target-title ubermenu-target-text">Confirmatory Factor Analysis</span></a></li><li id="menu-item-17521" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-level-4 ubermenu-item-17521 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/factor-analysis-sem/"><span class="ubermenu-target-title ubermenu-target-text">[ View All ]</span></a></li></ul></li><li id="menu-item-17523" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-level-3 ubermenu-item-17523 ubermenu-item-header ubermenu-item-level-7 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-stack"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/non-parametric-analysis/"><span class="ubermenu-target-title ubermenu-target-text">Non-Parametric Analysis</span></a><ul class="ubermenu-submenu ubermenu-submenu-id-17523 ubermenu-submenu-type-auto ubermenu-submenu-type-stack"><li id="menu-item-17524" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-4 ubermenu-item-17524 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/non-parametric-analysis-chaid/"><span class="ubermenu-target-title ubermenu-target-text">CHAID</span></a></li><li id="menu-item-17525" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-4 ubermenu-item-17525 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/wald-wolfowitz-run-test/"><span class="ubermenu-target-title ubermenu-target-text">Wald Wolfowitz Run Test</span></a></li><li id="menu-item-17526" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-level-4 ubermenu-item-17526 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-9 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/non-parametric-analysis/"><span class="ubermenu-target-title ubermenu-target-text">[ View All ]</span></a></li></ul></li></ul></li><li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fa fa-times"></i> Close</li></ul></li><li id="menu-item-17848" class="ubermenu-tab ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-level-1 ubermenu-item-17848 ubermenu-item-auto ubermenu-column ubermenu-column-full ubermenu-has-submenu-drop" data-ubermenu-trigger="mouseover"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/directory-of-survey-instruments/"><span class="ubermenu-target-title ubermenu-target-text">Directory of Survey Instruments</span></a><ul class="ubermenu-tab-content-panel ubermenu-column ubermenu-column-3-4 ubermenu-submenu ubermenu-submenu-id-17848 ubermenu-submenu-type-auto ubermenu-submenu-type-tab-content-panel ubermenu-autoclear" style="min-height: 718px;"><li id="menu-item-17528" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-2 ubermenu-item-17528 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-5 ubermenu-column ubermenu-column-1-3"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/attitudes/"><span class="ubermenu-target-title ubermenu-target-text">Attitudes</span></a></li><li id="menu-item-17529" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-2 ubermenu-item-17529 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-5 ubermenu-column ubermenu-column-1-3"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/emotional-intelligence/"><span class="ubermenu-target-title ubermenu-target-text">Emotional Intelligence</span></a></li><li id="menu-item-17530" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-2 ubermenu-item-17530 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-5 ubermenu-column ubermenu-column-1-3"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/learning-teaching-school/"><span class="ubermenu-target-title ubermenu-target-text">Learning / Teaching / School</span></a></li><li id="menu-item-17531" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-2 ubermenu-item-17531 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-5 ubermenu-column ubermenu-column-1-3"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/psychological-personality/"><span class="ubermenu-target-title ubermenu-target-text">Psychological / Personality</span></a></li><li id="menu-item-17532" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-2 ubermenu-item-17532 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-5 ubermenu-column ubermenu-column-1-3"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/women/"><span class="ubermenu-target-title ubermenu-target-text">Women</span></a></li><li id="menu-item-17533" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-2 ubermenu-item-17533 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-5 ubermenu-column ubermenu-column-1-3"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/career/"><span class="ubermenu-target-title ubermenu-target-text">Career</span></a></li><li id="menu-item-17534" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-2 ubermenu-item-17534 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-5 ubermenu-column ubermenu-column-1-3"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/health/"><span class="ubermenu-target-title ubermenu-target-text">Health</span></a></li><li id="menu-item-17535" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-2 ubermenu-item-17535 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-5 ubermenu-column ubermenu-column-1-3"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/military/"><span class="ubermenu-target-title ubermenu-target-text">Military</span></a></li><li id="menu-item-17536" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-2 ubermenu-item-17536 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-5 ubermenu-column ubermenu-column-1-3"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/self-esteem/"><span class="ubermenu-target-title ubermenu-target-text">Self Esteem</span></a></li><li id="menu-item-17537" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-2 ubermenu-item-17537 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-5 ubermenu-column ubermenu-column-1-3"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/child/"><span class="ubermenu-target-title ubermenu-target-text">Child</span></a></li><li id="menu-item-17538" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-2 ubermenu-item-17538 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-5 ubermenu-column ubermenu-column-1-3"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/leadership/"><span class="ubermenu-target-title ubermenu-target-text">Leadership</span></a></li><li id="menu-item-17539" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-2 ubermenu-item-17539 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-5 ubermenu-column ubermenu-column-1-3"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/organizational-social-groups/"><span class="ubermenu-target-title ubermenu-target-text">Organizational / Social Groups</span></a></li><li id="menu-item-17540" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-2 ubermenu-item-17540 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-5 ubermenu-column ubermenu-column-1-3"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/stress-anxiety-depression/"><span class="ubermenu-target-title ubermenu-target-text">Stress / Anxiety / Depression</span></a></li><li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fa fa-times"></i> Close</li></ul></li></ul></li><!-- end Tabs: [Tabs] 17489 --><!-- end Segment: 582 --><li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fa fa-times"></i> Close</li></ul></li><li id="menu-item-17710" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-level-0 ubermenu-item-17710 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto"><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="http://www.statisticssolutions.com/next-steps-academic/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">Next Steps</span></a></li></ul></nav>
+<!-- End UberMenu -->
+</div>
+          
+          <div class="cleared"></div>    
+        </div>        
+      </div>      
+      <div class="cleared"></div> 
+    </div>  
+  </div>
+	<div id="primary" class="content-area">
+    		<div id="content" class="page-content main-wrapper clearfix" role="main">
+        <div class="breadcrumbs">
+
+	    <!-- Breadcrumb NavXT 5.6.0 -->
+<a title="Go to Statistics Solutions." href="http://www.statisticssolutions.com/" class="home">Home</a> | <a title="Go to Academic Solutions." href="http://www.statisticssolutions.com/academic-solutions/" class="post post-page">Academic Solutions</a> | <a title="Go to Directory of Statistical Analyses." href="http://www.statisticssolutions.com/old-directory-of-statistical-analyses/" class="post post-page">Directory of Statistical Analyses</a> | <a title="Go to Correlation." href="http://www.statisticssolutions.com/correlation/" class="post post-page">Correlation</a> | Correlation (Pearson, Kendall, Spearman)		</div>
+        			                <div class="span8">
+                                    <h1 class="alone-title">Correlation (Pearson, Kendall, Spearman)</h1>
+                                    <div class="et_builder_outer_content" id="et_builder_outer_content">
+				<div class="et_builder_inner_content et_pb_gutters3">
+					<div class="et_pb_section nopadding nomargin et_pb_section_0 et_pb_with_background et_section_regular">
+				
+				
+					
+					<div class="fullwidth et_pb_row et_pb_row_0">
+				
+				<div class="et_pb_column et_pb_column_4_4  et_pb_column_0">
+				
+				<div class="et_pb_text et_pb_module et_pb_bg_layout_light et_pb_text_align_left  et_pb_text_0">
+				
+<p><strong>Correlation</strong> is a bivariate analysis that measures the strengths of association between two variables and the direction of the relationship.&nbsp; In terms of the strength of relationship, the value of the correlation coefficient varies between +1 and -1. &nbsp;When the value of the correlation coefficient lies around ± 1, then it is said to be a perfect degree of association between the two variables.&nbsp; As the correlation coefficient value goes towards 0, the relationship between the two variables will be weaker. &nbsp;the direction of the relationship is simply the + (indicating a positive relationship between the variables) or - (indicating a negative relationship between the variables) sign of the correlation. &nbsp; Usually, in statistics, we measure four types of correlations: <a title="Pearson Correlation" href="http://www.statisticssolutions.com/academic-solutions/membership-resources/member-profile/conducting-analyses-results/videos/pearson-correlation/">Pearson correlation</a>, Kendall rank correlation, Spearman correlation, and the Point-Biserial correlation. &nbsp;The software below allows you to very easily conduct a correlation.</p>
+
+			</div> <!-- .et_pb_text -->
+			</div> <!-- .et_pb_column -->
+					
+			</div> <!-- .et_pb_row --><div class=" et_pb_row et_pb_row_1 et_pb_row_fullwidth">
+				
+				<div class="et_pb_column et_pb_column_1_2  et_pb_column_1">
+				
+				<div class="et_pb_code et_pb_module  et_pb_code_0">
+				<img src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/quantresultsbutton.jpg">
+			</div> <!-- .et_pb_code -->
+			</div> <!-- .et_pb_column --><div class="et_pb_column et_pb_column_1_2  et_pb_column_2">
+				
+				<div class="et_pb_code et_pb_module  et_pb_code_1">
+				
+<script src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/functions.js"></script>
+<style>
+.is-select-input {
+    border: 1px solid black !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    width: 100% !important;
+    margin: 5px 0px !important;
+    padding-left: 5px !important;
+    font-size: 18px !important;
+    font-family: 'Ubuntu' !important;
+    background-color: #ffffff !important;
+}
+
+.is-text-input {
+    border: 1px solid black !important;
+    height: 30px !important;
+    width: 100% !important;
+    margin: 5px 0px !important;
+    padding-left: 5px !important;
+    font-size: 18px !important;
+    background-color: #ffffff !important;
+}
+
+.is-submit-button {
+    border: 1px solid black !important;
+    height: 30px !important;
+    width: 100% !important;
+    margin: 5px 0px !important;
+    padding: 5px 0px !important;
+    background-color: #54a8a8 !important;
+    color: white !important;
+    font-size: 18px !important;
+    text-align: center !important;
+}
+
+.is-submit-button:hover {
+    cursor: pointer;
+    background-color: #197f80 !important;
+}
+
+.input-error {
+    border: 2px solid red !important;
+}
+
+.error-text {
+    color: red !important;
+    font-size: 14px !important;
+    margin: 5px 0px !important;
+    width: 100% !important;
+}
+</style>
+
+<div id="is-form-container">
+    <form id="hs-tracking-form">
+        <input type="hidden" name="referral_page" value="/correlation-pearson-kendall-spearman/">
+        <input type="hidden" name="form_name" value="hubspot_submit_form">
+        <div><input type="text" id="is_name" name="is_name" class="is-text-input is-input" placeholder="Name" autocomplete="off" required=""></div>
+        <div><span id="is_name-error-container" class="error-text"></span></div>
+        <div><input type="text" id="is_email" name="is_email" class="is-text-input is-input" placeholder="Email" autocomplete="off" required=""></div>
+        <div><span id="is_email-error-container" class="error-text"></span></div>
+        <div><input type="button" class="is-submit-button" value="Send Template" autocomplete="off" onclick="submit_template_form(&#39;/custom_php/quantitative_results.php&#39;);"></div>
+        <div><span id="is-error-container" class="error-text"></span></div>
+    </form>
+    <div id="form-processing-container"></div>
+</div>
+			</div> <!-- .et_pb_code -->
+			</div> <!-- .et_pb_column -->
+					
+			</div> <!-- .et_pb_row -->
+				
+			</div> <!-- .et_pb_section --><div class="et_pb_section  et_pb_section_1 et_section_regular et_section_transparent">
+				
+				
+					
+					<div class=" et_pb_row et_pb_row_2">
+				
+				<div class="et_pb_column et_pb_column_4_4  et_pb_column_3">
+				
+				<div class="et_pb_text et_pb_module et_pb_bg_layout_light et_pb_text_align_left  et_pb_text_1">
+				
+<p><span class="hs-cta-wrapper" id="hs-cta-wrapper-b532e48f-d02a-4d92-9e70-c599558ac9bd"><em><strong>Pearson r correlation:</strong></em> Pearson r correlation is the most widely used correlation statistic to measure the degree of the relationship between linearly related variables.&nbsp; For example, in the stock market, if we want to measure how two stocks are related to each other, Pearson <em>r</em> correlation is used to measure the degree of relationship between the two. &nbsp;The Point-biserial correlation is conducted with the Pearson correlation formula except that one of the variables is dichotomous. &nbsp;The following formula is used to calculate the Pearson r correlation:<br>
+</span></p>
+<p style="text-align: center;"><img class="aligncenter" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/p.jpg" alt="pearson r correlation" width="NaN" height="49"></p>
+<p>r = Pearson r correlation coefficient<br>
+N = number of value in each data set<br>
+∑xy = sum of the products of paired scores<br>
+∑x = sum of x scores<br>
+∑y = sum of y scores<br>
+∑x2= sum of squared x scores<br>
+∑y2= sum of squared y scores</p>
+<p><b>Types of research questions a Pearson correlation can examine:</b></p>
+<p>Is there a statistically significant relationship between age, as measured in years, and height, measured in inches?</p>
+<p>Is there a relationship between temperature, measure in degree Fahrenheit, and ice cream sales, measured by income?</p>
+<p>Is there a relationship among job satisfaction, as measured by the JSS, and income, measured in dollars?</p>
+<p><b>Assumptions</b></p>
+<p>For the Pearson <i>r</i> correlation, both variables should be normally distributed (normally distributed variables have a bell-shaped curve).&nbsp; Other assumptions include linearity and homoscedasticity. &nbsp;Linearity assumes a straight line relationship between each of the variables in the analysis and homoscedasticity assumes that data is normally distributed about the regression line.</p>
+<p><strong><em>Conduct and Interpret a Pearson Correlation</em></strong></p>
+<p style="text-align: center;"><div class="fluid-width-video-wrapper" style="padding-top: 56.25%;"><iframe src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/171140896.html" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen" id="fitvid0"></iframe></div></p>
+<p><span style="text-decoration: underline;"><b>Key Terms</b></span></p>
+<p><b>Effect size:</b> Cohen’s standard will be used to evaluate the correlation coefficient to determine the strength of the relationship, or the effect size, where correlation coefficients between .10 and .29 represent a small association, coefficients between .30 and .49 represent a medium association, and coefficients of .50 and above represent a large association or relationship.</p>
+<p><b>Continuous data: </b>Data that is interval or ratio level. &nbsp;This type of data possess the properties of magnitude and equal interval between adjacent units.&nbsp; Equal intervals between adjacent units means that there are equal amounts of the variable being measured between adjacent units on the scale.&nbsp; An example would be age.&nbsp; An increase in age from 21 to 22 would be the same as an increase in age from 60 to 61.</p>
+<p><strong><em>Kendall rank correlation</em>: </strong>Kendall rank correlation is a non-parametric test that measures the strength of dependence between two variables.&nbsp; If we consider two samples, a and b, where each sample size is <em>n</em>, we know that the total number of pairings with a b is<em> n</em>(<em>n</em>-1)/2<em>.</em>&nbsp; The following formula is used to calculate the value of Kendall rank correlation:</p>
+<p style="text-align: center;"><img class="aligncenter" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/t.jpg" alt="kendall rank correlation" width="93" height="64"></p>
+<p style="text-align: left;">Nc= number of concordant<br>
+Nd= Number of discordant</p>
+<p><em><strong>Conduct and Interpret a Kendall Correlation</strong></em></p>
+<p style="text-align: center;"><div class="fluid-width-video-wrapper" style="padding-top: 56.25%;"><iframe src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/171141691.html" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen" id="fitvid1"></iframe></div></p>
+<p style="text-align: left;"><span style="text-decoration: underline;"><strong>Key Terms</strong></span></p>
+<p><b>Concordant: </b>Ordered in the same way.</p>
+<p><b>Discordant: </b>Ordered differently.</p>
+<p><strong><em>Spearman rank correlation</em>: </strong>Spearman rank correlation is a non-parametric test that is used to measure the degree of association between two variables.&nbsp; It was developed by Spearman, thus it is called the Spearman rank correlation.&nbsp; Spearman rank correlation test does not assume any assumptions about the distribution of the data and is the appropriate correlation analysis when the variables are measured on a scale that is at least ordinal.</p>
+<p>The following formula is used to calculate the Spearman rank correlation:</p>
+<p style="text-align: center;"><img class="aligncenter" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/wher.jpg" alt="spearman rank correlation" width="112" height="52"></p>
+<p>P= Spearman rank correlation<br>
+di= the difference between the ranks of corresponding values Xi and Yi<br>
+n= number of value in each data set</p>
+<p><b>Questions Spearman Correlation Answers</b></p>
+<p>Is there a statistically significant relationship between participants' responses to two Likert scales questions?</p>
+<p>Is there a statistically significant relationship between how the horses rank in the race and the horses’ ages?</p>
+<p><b>Assumptions</b></p>
+<p>Spearman rank correlation test does not make any assumptions about the distribution.&nbsp; The assumptions of Spearman rho correlation are that data must be at least ordinal and scores on one variable must be montonically related to the other variable.</p>
+<p><em><strong>Conduct and Interpret a Spearman Correlation</strong></em></p>
+<p style="text-align: center;"><div class="fluid-width-video-wrapper" style="padding-top: 56.25%;"><iframe src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/171125227.html" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen" id="fitvid2"></iframe></div></p>
+<p><span style="text-decoration: underline;"><b>Key Terms</b></span></p>
+<p><b>Effect size: </b>Cohen’s standard will be used to evaluate the correlation coefficient to determine the strength of the relationship, or the effect size, where coefficients between .10 and .29 represent a small association; coefficients between .30 and .49 represent a medium association; and coefficients of .50 and above represent a large association or relationship.</p>
+<p><b>Ordinal data: </b><b>&nbsp;</b>Ordinal scales rank order the items that are being measured to indicate if they possess more, less, or the same amount of the variable being measured.&nbsp; An ordinal scale allows us to determine if X &gt; Y, Y &gt; X, or if X = Y.&nbsp; An example would be rank ordering the participants in a dance contest.&nbsp; The dancer who was ranked one was a better dancer than the dancer who was ranked two.&nbsp; The dancer ranked two was a better dancer than the dancer who was ranked three, and so on.&nbsp; Although this scale allows us to determine greater than, less than, or equal to, it still does not define the magnitude of the relationship between units.&nbsp; <b></b></p>
+<p><strong>For Assistance Conducting Analyses:</strong></p>
+<p>Please <a title="Dissertation Consulting Services" href="http://www.statisticssolutions.com/academic-solutions/academic-research-consulting/dissertation-consulting-services/">click here</a> for more information on our academic services.</p>
+<div class="cta-embed">Having difficulty? Let one of our experts help by setting up a FREE Consultation.<br>
+<div class="top-content add-to-consult consultpop" style="text-align: center; padding: 7px; margin-top: 5px; max-width: 400px; font-size: 17px; font-weight: bold; color: #fff; white-space: nowrap;"><a href="http://www.statisticssolutions.com/next-steps-academic/" class="consultpop">FREE 30 Minute Dissertation Consultation</a></div>
+</div>
+<p><strong>Correlation Resources:</strong></p>
+<p>Algina, J., &amp; Keselman, H. J. (1999). Comparing squared multiple correlation coefficients: Examination of a confidence interval and a test significance. <em>Psychological Methods, 4</em>(1), 76-83.</p>
+<p>Bobko, P. (2001). <em>Correlation and regression: Applications for industrial organizational psychology and management</em> (2nd ed.). Thousand Oaks, CA: Sage Publications. <a href="http://books.google.com/books?id=CvDL7YdZos0C&amp;pg=PR4&amp;lpg=PR4&amp;dq=Bobko,+P.+%282001%29.+Correlation+and+regression:+Applications+for+industrial+organizational+psychology+and+management+%282nd+ed.%29.+Thousand+Oaks,+CA:+Sage+Publications&amp;source=bl&amp;ots=ZOYTHMOavm&amp;sig=ta_7RlqpMB-mVkL6-SsuX26x2Pg&amp;hl=en&amp;sa=X&amp;ei=BYHiUrjTKbXKsQTz84GgCw&amp;ved=0CE0Q6AEwAw#v=onepage&amp;q=Bobko%2C%20P.%20%282001%29.%20Correlation%20and%20regression%3A%20Applications%20for%20industrial%20organizational%20psychology%20and%20management%20%282nd%20ed.%29.%20Thousand%20Oaks%2C%20CA%3A%20Sage%20Publications&amp;f=false" target="_blank">View</a><img style="border: none !important; margin: 0px !important; display: none !important;" src="http://www.assoc-amazon.com/e/ir?t=statissoluti-20&amp;l=as2&amp;o=1&amp;a=0761923039&amp;camp=217145&amp;creative=399349" alt="" width="1" height="1" border="0"></p>
+<p>Bonett, D. G. (2008). Meta-analytic interval estimation for bivariate correlations. <em>Psychological Methods, 13</em>(3), 173-181.</p>
+<p>Chen, P. Y., &amp; Popovich, P. M. (2002). <em>Correlation: Parametric and nonparametric measures</em>. Thousand Oaks, CA: Sage Publications. <a href="http://rufiismada.files.wordpress.com/2012/02/correlation__parametric_and_nonparametric_measures__quantitative_applications_in_the_social_sciences_.pdf" target="_blank">View<img style="border: none !important; margin: 0px !important; display: none !important;" src="http://www.assoc-amazon.com/e/ir?t=statissoluti-20&amp;l=as2&amp;o=1&amp;a=0761922288" alt="" width="1" height="1" border="0"></a></p>
+<p>Cheung, M. W. -L., &amp; Chan, W. (2004). Testing dependent correlation coefficients via structural equation modeling. <em>Organizational Research Methods, 7</em>(2), 206-223.</p>
+<p>Coffman, D. L., Maydeu-Olivares, A., Arnau, J. (2008). Asymptotic distribution free interval estimation: For an intraclass correlation coefficient with applications to longitudinal data. <em>Methodology, 4</em>(1), 4-9.</p>
+<p>Cohen, J., Cohen, P., West, S. G., &amp; Aiken, L. S. (2003). <em>Applied multiple regression/correlation analysis for the behavioral sciences</em>. (3rd ed.). Mahwah, NJ: Lawrence Erlbaum Associates. <a href="http://www.amazon.com/Multiple-Regression-Correlation-Analysis-Behavioral/dp/0805822232" target="_blank">View<img style="border: none !important; margin: 0px !important; display: none !important;" src="http://www.assoc-amazon.com/e/ir?t=statissoluti-20&amp;l=as2&amp;o=1&amp;a=0805822232" alt="" width="1" height="1" border="0"></a></p>
+<p>Hatch, J. P., Hearne, E. M., &amp; Clark, G. M. (1982). A method of testing for serial correlation in univariate repeated-measures analysis of variance. <em>Behavior Research Methods &amp; Instrumentation, 14</em>(5), 497-498.</p>
+<p>Kendall, M. G., &amp; Gibbons, J. D. (1990). <em>Rank Correlation Methods</em> (5th ed.). London: Edward Arnold. <a href="http://books.google.com/books?id=kJbVO2G6VicC&amp;pg=PA625&amp;lpg=PA625&amp;dq=Kendall,+M.+G.,+%26+Gibbons,+J.+D.+%281990%29.+Rank+Correlation+Methods+%285th+ed.%29.+London:+Edward+Arnold&amp;source=bl&amp;ots=9cHQhvniPC&amp;sig=J4o09KGyxr2m8LsZjtsDDJhl0u4&amp;hl=en&amp;sa=X&amp;ei=24HiUv3sNOalsQSw54HABA&amp;ved=0CDoQ6AEwAQ#v=onepage&amp;q=Kendall%2C%20M.%20G.%2C%20%26%20Gibbons%2C%20J.%20D.%20%281990%29.%20Rank%20Correlation%20Methods%20%285th%20ed.%29.%20London%3A%20Edward%20Arnold&amp;f=false" target="_blank">View<img style="border: none !important; margin: 0px !important; display: none !important;" src="http://www.assoc-amazon.com/e/ir?t=statissoluti-20&amp;l=as2&amp;o=1&amp;a=0195208374" alt="" width="1" height="1" border="0"></a></p>
+<p>Krijnen, W. P. (2004). Positive loadings and factor correlations from positive covariance matrices. <em>Psychometrika, 69</em>(4), 655-660.</p>
+<p>Shieh, G. (2006). Exact interval estimation, power calculation, and sample size determination in normal correlation analysis. <em>Psychometrika, 71</em>(3), 529-540.</p>
+<p>Stauffer, J. M., &amp; Mendoza, J. L. (2001). The proper sequence for correcting correlation coefficients for range restriction and unreliability. <em>Psychometrika, 66</em>(1), 63-68.</p>
+<p><strong>Related Pages:</strong></p>
+<ul>
+<li><a title="Table of Critical Values: Pearson Correlation" href="http://www.statisticssolutions.com/table-of-critical-values-pearson-correlation/" target="_blank">Table of Critical Values: Pearson Correlation</a></li>
+<li><a title="Conduct and Interpret a Spearman Rank Correlation" href="http://www.statisticssolutions.com/academic-solutions/resources/directory-of-statistical-analyses/spearman-rank-correlation/" target="_blank">Conduct and Interpret a Spearman Rank Correlation</a></li>
+<li><a title="Conduct and Interpret a Bivariate (Pearson) Correlation" href="http://www.statisticssolutions.com/academic-solutions/resources/directory-of-statistical-analyses/bivariate-correlation/" target="_blank">Conduct and Interpret a Bivariate (Pearson) Correlation</a></li>
+</ul>
+
+			</div> <!-- .et_pb_text -->
+			</div> <!-- .et_pb_column -->
+					
+			</div> <!-- .et_pb_row -->
+				
+			</div> <!-- .et_pb_section -->
+
+				</div>
+			</div>                </div>
+                            <div class="span4 last">
+                    
+<div id="secondary" class="widget-area sidebar" role="complementary">
+  <aside id="text-51" class="widget widget_text"><h3 class="widget-title">Schedule Your Consultation</h3>			<div class="textwidget"><div style="padding: 15px; text-align: center;"><span style="font-size: 16pt; font-weight: bold;">Schedule a time to meet confidentially with Dr. James Lani </span><br><span style="font-size: 9pt;">Don't see the date/time you want? Call us at 727-442-4290.</span></div>
+<!-- Start of Meetings Embed Script -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-773105-2', 'auto');
+ga('send', {
+  hitType: 'event',
+  eventCategory: 'Schedule',
+  eventAction: 'click'
+});
+
+</script>
+<div class="meetings-iframe-container" data-src="https://app.hubspot.com/meetings/james110?embed=true"><iframe src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/james110.html" width="100%" style="min-width: 312px; min-height: 516px; height: 672px; border: none;"></iframe></div>
+<script type="text/javascript" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/MeetingsEmbedCode.js"></script>
+
+<div style="padding: 15px; text-align: center;"><span style="font-size: 16pt; font-weight: bold;">Listen to a Live Client Testimonial<audio controls=""><source src="http://www.statisticssolutions.com/wp-content/uploads/2017/08/newslettercall.mp3?rel=0"></audio> </span></div>
+
+<!-- End of Meetings Embed Script --></div>
+		</aside><aside id="text-53" class="widget widget_text">			<div class="textwidget">		<div class="widget">
+			<ul class="side-menu">
+				<li class="page_item page-item-1446"><a href="http://www.statisticssolutions.com/bivariate-correlation/">Conduct and Interpret a Bivariate (Pearson) Correlation</a></li>
+<li class="page_item page-item-1517"><a href="http://www.statisticssolutions.com/canonical-correlation/">Conduct and Interpret a Canonical Correlation</a></li>
+<li class="page_item page-item-1496"><a href="http://www.statisticssolutions.com/conduct-interpret-partial-correlation/">Conduct and Interpret a Partial Correlation</a></li>
+<li class="page_item page-item-1511"><a href="http://www.statisticssolutions.com/point-biserial-correlation/">Conduct and Interpret a Point-Biserial Correlation</a></li>
+<li class="page_item page-item-496 current_page_item"><a href="http://www.statisticssolutions.com/correlation-pearson-kendall-spearman/">Correlation (Pearson, Kendall, Spearman)</a></li>
+<li class="page_item page-item-532"><a href="http://www.statisticssolutions.com/directory-of-statistical-analyses-correlation-ratio/">Correlation Ratio</a></li>
+<li class="page_item page-item-660"><a href="http://www.statisticssolutions.com/directory-of-statistical-analyses-correlation-measures-of-association/">Measures of Association</a></li>
+<li class="page_item page-item-682"><a href="http://www.statisticssolutions.com/partial-correlation/">Partial Correlation</a></li>
+<li class="page_item page-item-686 page_item_has_children"><a href="http://www.statisticssolutions.com/pearsons-correlation-coefficient/">Pearson’s Correlation Coefficient</a></li>
+			</ul>
+		</div><!--/widget-->
+	</div>
+		</aside></div>
+<!-- #secondary -->                </div>
+        		<!-- #content -->
+	<!-- #primary --></div></div>
+  <br clear="all"><div class="footer">© Statistics Solutions 2017</div>
+</div>
+<!-- HUBSPOT -->
+<script charset="utf-8" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/current.js"></script>
+<script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"5436891"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script><noscript>&lt;img src="//bat.bing.com/action/0?ti=5436891&amp;Ver=2" height="0" width="0" style="display:none; visibility: hidden;" /&gt;</noscript><div class="et_social_pin_images_outer">
+					<div class="et_social_pinterest_window">
+						<div class="et_social_modal_header"><h3>Pin It on Pinterest</h3><span class="et_social_close"></span></div>
+						<div class="et_social_pin_images" data-permalink="http://www.statisticssolutions.com/correlation-pearson-kendall-spearman/" data-title="Correlation (Pearson, Kendall, Spearman)" data-post_id="496"><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=http://www.statisticssolutions.com/correlation-pearson-kendall-spearman/&amp;media=http://www.statisticssolutions.com/wp-content/themes/statistics-2014/custom-imgs/statistics-solutions-long.jpg&amp;description=Correlation%20(Pearson,%20Kendall,%20Spearman)" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="496" data-social_type="share"><img src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/statistics-solutions-long.jpg" alt="Statistics Solutions"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=http://www.statisticssolutions.com/correlation-pearson-kendall-spearman/&amp;media=http://www.statisticssolutions.com/wp-content/uploads/2017/07/quantresultsbutton.jpg&amp;description=Correlation%20(Pearson,%20Kendall,%20Spearman)" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="496" data-social_type="share"><img src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/quantresultsbutton.jpg" alt="undefined"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=http://www.statisticssolutions.com/correlation-pearson-kendall-spearman/&amp;media=http://www.statisticssolutions.com/wp-content/uploads/2010/01/p.jpg&amp;description=Correlation%20(Pearson,%20Kendall,%20Spearman)" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="496" data-social_type="share"><img src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/p.jpg" alt="pearson r correlation"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=http://www.statisticssolutions.com/correlation-pearson-kendall-spearman/&amp;media=http://www.statisticssolutions.com/wp-content/uploads/2010/01/t.jpg&amp;description=Correlation%20(Pearson,%20Kendall,%20Spearman)" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="496" data-social_type="share"><img src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/t.jpg" alt="kendall rank correlation"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=http://www.statisticssolutions.com/correlation-pearson-kendall-spearman/&amp;media=http://www.statisticssolutions.com/wp-content/uploads/2010/01/wher.jpg&amp;description=Correlation%20(Pearson,%20Kendall,%20Spearman)" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="496" data-social_type="share"><img src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/wher.jpg" alt="spearman rank correlation"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=http://www.statisticssolutions.com/correlation-pearson-kendall-spearman/&amp;media=http://www.assoc-amazon.com/e/ir?t=statissoluti-20&amp;l=as2&amp;o=1&amp;a=0761923039&amp;camp=217145&amp;creative=399349&amp;description=Correlation%20(Pearson,%20Kendall,%20Spearman)" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="496" data-social_type="share"><img src="http://www.assoc-amazon.com/e/ir?t=statissoluti-20&amp;l=as2&amp;o=1&amp;a=0761923039&amp;camp=217145&amp;creative=399349" alt="" style="display: none !important;"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=http://www.statisticssolutions.com/correlation-pearson-kendall-spearman/&amp;media=http://www.assoc-amazon.com/e/ir?t=statissoluti-20&amp;l=as2&amp;o=1&amp;a=0761922288&amp;description=Correlation%20(Pearson,%20Kendall,%20Spearman)" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="496" data-social_type="share"><img src="http://www.assoc-amazon.com/e/ir?t=statissoluti-20&amp;l=as2&amp;o=1&amp;a=0761922288" alt="" style="display: none !important;"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=http://www.statisticssolutions.com/correlation-pearson-kendall-spearman/&amp;media=http://www.assoc-amazon.com/e/ir?t=statissoluti-20&amp;l=as2&amp;o=1&amp;a=0805822232&amp;description=Correlation%20(Pearson,%20Kendall,%20Spearman)" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="496" data-social_type="share"><img src="http://www.assoc-amazon.com/e/ir?t=statissoluti-20&amp;l=as2&amp;o=1&amp;a=0805822232" alt="" style="display: none !important;"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=http://www.statisticssolutions.com/correlation-pearson-kendall-spearman/&amp;media=http://www.assoc-amazon.com/e/ir?t=statissoluti-20&amp;l=as2&amp;o=1&amp;a=0195208374&amp;description=Correlation%20(Pearson,%20Kendall,%20Spearman)" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="496" data-social_type="share"><img src="http://www.assoc-amazon.com/e/ir?t=statissoluti-20&amp;l=as2&amp;o=1&amp;a=0195208374" alt="" style="display: none !important;"><span class="et_social_pin_overlay et_social_icon"></span></a></div><div class="et_social_pin_image"><a href="http://www.pinterest.com/pin/create/button/?url=http://www.statisticssolutions.com/correlation-pearson-kendall-spearman/&amp;media=http://bat.bing.com/action/0?ti=5436891&amp;Ver=2&amp;mid=01d6e588-3fe0-9ffe-a3a7-9c9325ebb39a&amp;evt=pageLoad&amp;sid=6f23867b-1&amp;lt=3745&amp;pi=-1225337155&amp;lg=en-US&amp;sw=1920&amp;sh=1080&amp;sc=24&amp;tl=Correlation%20(Pearson,%20Kendall,%20Spearman)%20-%20Statistics%20Solutions&amp;p=http%3A%2F%2Fwww.statisticssolutions.com%2Fcorrelation-pearson-kendall-spearman%2F&amp;r=&amp;rn=609652&amp;description=Correlation%20(Pearson,%20Kendall,%20Spearman)" rel="nofollow" class="et_social_icon et_social_share" data-social_name="pinterest" data-post_id="496" data-social_type="share"><img src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/0" alt=""><span class="et_social_pin_overlay et_social_icon"></span></a></div></div>
+					</div>
+				</div><div class="et_social_sidebar_networks et_social_visible_sidebar et_social_slideright et_social_animated et_social_rectangle et_social_sidebar_grow et_social_withtotalcount et_social_mobile_on et_social_sidebar_networks_right" style="top: 333px;">
+					<div class="et_social_totalcount et_social_dark">
+							<span class="et_social_totalcount_count et_social_total_share" data-post_id="496"><span class="et_social_placeholder"></span></span>
+							<span class="et_social_totalcount_label">Shares</span>
+						</div>
+					<ul class="et_social_icons_container"><li class="et_social_facebook">
+									<a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.statisticssolutions.com%2Fcorrelation-pearson-kendall-spearman%2F&amp;t=Correlation%20%28Pearson%2C%20Kendall%2C%20Spearman%29" class="et_social_share" rel="nofollow" data-social_name="facebook" data-post_id="496" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_facebook"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_twitter">
+									<a href="http://twitter.com/share?text=Correlation%20%28Pearson%2C%20Kendall%2C%20Spearman%29&amp;url=http%3A%2F%2Fwww.statisticssolutions.com%2Fcorrelation-pearson-kendall-spearman%2F&amp;via=" class="et_social_share" rel="nofollow" data-social_name="twitter" data-post_id="496" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_twitter"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_googleplus">
+									<a href="https://plus.google.com/share?url=http%3A%2F%2Fwww.statisticssolutions.com%2Fcorrelation-pearson-kendall-spearman%2F&amp;t=Correlation%20%28Pearson%2C%20Kendall%2C%20Spearman%29" class="et_social_share" rel="nofollow" data-social_name="googleplus" data-post_id="496" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_googleplus"></i>
+										
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_linkedin">
+									<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fwww.statisticssolutions.com%2Fcorrelation-pearson-kendall-spearman%2F&amp;title=Correlation%20%28Pearson%2C%20Kendall%2C%20Spearman%29" class="et_social_share" rel="nofollow" data-social_name="linkedin" data-post_id="496" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_linkedin"></i>
+										
+										<div class="et_social_count"><span>9</span></div>
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_all_button">
+												<a href="http://www.statisticssolutions.com/correlation-pearson-kendall-spearman/#" rel="nofollow" data-location="sidebar" data-page_id="496" data-permalink="http://www.statisticssolutions.com/correlation-pearson-kendall-spearman/" data-title="Correlation (Pearson, Kendall, Spearman)" class="et_social_open_all">
+													<i class="et_social_icon et_social_icon_all_button"></i>
+													<span class="et_social_overlay"></span>
+												</a>
+											</li></ul>
+					<span class="et_social_hide_sidebar et_social_icon"></span>
+				</div><div class="et_social_mobile_button"></div>
+					<div class="et_social_mobile et_social_fadein">
+						<div class="et_social_heading">Share This</div>
+						<span class="et_social_close"></span>
+						<div class="et_social_networks et_social_simple et_social_rounded et_social_left" style="display: none; max-height: 45px; height: 45px;">
+							<ul class="et_social_icons_container"><li class="et_social_facebook">
+									<a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.statisticssolutions.com%2Fcorrelation-pearson-kendall-spearman%2F&amp;t=Correlation%20%28Pearson%2C%20Kendall%2C%20Spearman%29" class="et_social_share" rel="nofollow" data-social_name="facebook" data-post_id="496" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_facebook"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">Facebook</div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_twitter">
+									<a href="http://twitter.com/share?text=Correlation%20%28Pearson%2C%20Kendall%2C%20Spearman%29&amp;url=http%3A%2F%2Fwww.statisticssolutions.com%2Fcorrelation-pearson-kendall-spearman%2F&amp;via=" class="et_social_share" rel="nofollow" data-social_name="twitter" data-post_id="496" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_twitter"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">Twitter</div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_googleplus">
+									<a href="https://plus.google.com/share?url=http%3A%2F%2Fwww.statisticssolutions.com%2Fcorrelation-pearson-kendall-spearman%2F&amp;t=Correlation%20%28Pearson%2C%20Kendall%2C%20Spearman%29" class="et_social_share" rel="nofollow" data-social_name="googleplus" data-post_id="496" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_googleplus"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">Google+</div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_linkedin">
+									<a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fwww.statisticssolutions.com%2Fcorrelation-pearson-kendall-spearman%2F&amp;title=Correlation%20%28Pearson%2C%20Kendall%2C%20Spearman%29" class="et_social_share" rel="nofollow" data-social_name="linkedin" data-post_id="496" data-social_type="share" data-location="sidebar">
+										<i class="et_social_icon et_social_icon_linkedin"></i>
+										<div class="et_social_network_label"><div class="et_social_networkname">LinkedIn</div></div>
+										
+										<span class="et_social_overlay"></span>
+									</a>
+								</li><li class="et_social_all_button">
+												<a href="http://www.statisticssolutions.com/correlation-pearson-kendall-spearman/#" rel="nofollow" data-location="sidebar" data-page_id="496" data-permalink="http://www.statisticssolutions.com/correlation-pearson-kendall-spearman/" data-title="Correlation (Pearson, Kendall, Spearman)" class="et_social_open_all">
+													<i class="et_social_icon et_social_icon_all_button"></i>
+													<span class="et_social_overlay"></span>
+												</a>
+											</li></ul>
+						</div>
+					</div>
+					<div class="et_social_mobile_overlay"></div>
+<!-- Start of Async HubSpot Analytics Code for WordPress v1.1.2 -->
+<iframe data-olark="true" title="olark chat box" style="width: 0px; height: 0px; position: absolute; left: 0px; bottom: 0px; border: none;" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/saved_resource.html"></iframe><script type="text/javascript">
+var _hsq = _hsq || [];
+_hsq.push(["setContentType", "standard-page"]);
+(function(d,s,i,r) {
+  if (d.getElementById(i)){return;}
+  var n = d.createElement(s),e = document.getElementsByTagName(s)[0];
+  n.id=i;n.src = '//js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/256306.js';
+  e.parentNode.insertBefore(n, e);
+})(document, "script", "hs-analytics", 300000);
+</script>
+<!-- End of Async HubSpot Analytics Code -->
+<style type="text/css" id="et-builder-advanced-style">
+				
+.et_divi_builder #et_builder_outer_content .et_pb_row_1 { border: 1px solid black;padding-right: 20px;padding-left: 20px; }
+.et_divi_builder #et_builder_outer_content .et_pb_section_0.et_pb_section { background-color:#ffffff !important; }
+			</style><script type="text/javascript" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/frontend-builder-global-functions.js"></script>
+<script type="text/javascript" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/idle-timer.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var monarchSettings = {"ajaxurl":"http:\/\/www.statisticssolutions.com\/wp-admin\/admin-ajax.php","pageurl":"http:\/\/www.statisticssolutions.com\/correlation-pearson-kendall-spearman\/","stats_nonce":"b4316c0f17","share_counts":"13a625da23","follow_counts":"76949f7b66","total_counts":"1b18c4d4ae","media_single":"8d7da93c20","media_total":"f6b2462dad","generate_all_window_nonce":"1e3cb38b97","no_img_message":"No images available for sharing on this page"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/custom.js"></script>
+<script type="text/javascript" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/main.js"></script>
+<script type="text/javascript" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/q2w3-fixed-widget.min.js"></script>
+<script type="text/javascript" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/jquery.fitvids.js"></script>
+<script type="text/javascript" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/waypoints.min.js"></script>
+<script type="text/javascript" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/jquery.magnific-popup.js"></script>
+<script type="text/javascript" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/jquery.mobile.custom.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var et_pb_custom = {"ajaxurl":"http:\/\/www.statisticssolutions.com\/wp-admin\/admin-ajax.php","images_uri":"http:\/\/www.statisticssolutions.com\/wp-content\/themes\/statistics-2014\/images","builder_images_uri":"http:\/\/www.statisticssolutions.com\/wp-content\/plugins\/divi-builder\/framework\/images","et_frontend_nonce":"71c69e6e3b","subscription_failed":"Please, check the fields below to make sure you entered the correct information.","et_ab_log_nonce":"aa7ceab6fb","fill_message":"Please, fill in the following fields:","contact_error_message":"Please, fix the following errors:","invalid":"Invalid email","captcha":"Captcha","prev":"Prev","previous":"Previous","next":"Next","wrong_captcha":"You entered the wrong number in captcha.","is_builder_plugin_used":"1","is_divi_theme_used":"","widget_search_selector":".widget_search","is_ab_testing_active":"","page_id":"496","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"yes","is_shortcode_tracking":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/frontend-builder-scripts.js"></script>
+<script type="text/javascript" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var ubermenu_data = {"remove_conflicts":"on","reposition_on_load":"off","intent_delay":"300","intent_interval":"100","intent_threshold":"7","scrollto_offset":"50","scrollto_duration":"1000","responsive_breakpoint":"959","accessible":"on","retractor_display_strategy":"responsive","touch_off_close":"on","v":"3.2.0.2","ajax_url":"http:\/\/www.statisticssolutions.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/ubermenu.min.js"></script>
+<script type="text/javascript" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/wpmu-ui.3.min.js"></script>
+<script type="text/javascript" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/wp-embed.min.js"></script>
+<!-- Remarketing -->
+<!-- Google Code for Remarketing Tag -->
+<!--------------------------------------------------
+Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+--------------------------------------------------->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1064929025;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+&lt;div style="display:inline;"&gt;
+&lt;img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1064929025/?value=0&amp;amp;guid=ON&amp;amp;script=0"/&gt;
+&lt;/div&gt;
+</noscript>
+<!-- End Remarketing -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-773105-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"4e0a494fe5","applicationID":"7734492","transactionName":"ZVRTYkZTXUtZVxFfXFweZERdHVpWXFEdGENaQQ==","queueTime":0,"applicationTime":1,"atts":"SRNQFA5JTkU=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+
+<div style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.19766132277623139"><img style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.6412386350112036" width="0" height="0" alt="" src="./Correlation (Pearson, Kendall, Spearman) - Statistics Solutions_files/0"></div></body></html>

@@ -1,0 +1,138 @@
+
+.rmd-container table,
+.rmd-container table tr,
+.rmd-container table th,
+.rmd-container table td {
+	border:none !important;
+}
+ 
+.rmd-vertical-text
+{
+  width:80px !important;
+  height:30px !important;  
+  margin-top:6px !important;
+  float:left !important;
+   -ms-transform:rotate(270deg); /* IE 9 */
+  -moz-transform:rotate(270deg); /* Firefox */
+  -webkit-transform:rotate(270deg); /* Safari and Chrome */
+  -o-transform:rotate(270deg); /* Opera */ 
+   transform:rotate(270deg);  
+  transform-origin: 35% 100%; 
+  position: absolute !important;
+}
+
+.rmd-separator {
+	border-bottom:1px solid rgb(200,200,200);
+  margin-top:20px;
+}
+
+.rmd-total-time-container {
+	width: 100% !important;
+	box-sizing:border-box;
+	padding:15px !important;
+	text-align: center;
+	background: #F7F7BB;
+	border: 2px solid #D4D4D2;
+}
+.rmd-total-time-container h3 {
+	margin:0px;
+}
+
+.rmd-progress-option-label:hover {
+  cursor: pointer;
+ }
+ 
+
+.rmd-progress-option-container .rmd-progress-option-label {
+  color:blue;
+}
+
+.error-container {
+    color:#D31D1D !important;
+    margin-bottom: 15px !important;
+}
+
+
+.timeline-btn {
+    background-color: #54a8a8 !important;
+    display: inline-block !important;
+    padding:10px 20px !important;
+    border:none !important;
+    color:#fff !important;
+    font-size:15px !important;
+    cursor: pointer !important;
+    margin-top:20px !important;
+    border-radius: 3px !important;
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 860px) {
+
+    .rmd-progress-option-container { 
+        transform: rotate(90deg) !important;
+        -webkit-transform: rotate(90deg) !important ;
+        -moz-transform: rotate(90deg) !important ;
+        -o-transform: rotate(90deg) !important;
+        -ms-transform: rotate(90deg) !important;
+        transform: rotate(90deg) !important;
+        margin-top:15px !important;  
+        width:100px !important;
+        float: right !important;
+    } 
+    .rmd-progress-option-container  {
+        display: -webkit-box !important;
+        display: -moz-box !important;
+        display: -ms-flexbox !important;
+        display: -webkit-flex !important;
+        display: flex !important;
+        -webkit-box-orient: vertical !important;
+        -moz-box-orient: vertical!important;
+        -webkit-flex-direction: column !important;
+        -ms-flex-direction: column !important;
+        flex-direction: column !important;
+        /* optional */
+        -webkit-box-align: start !important;
+        -moz-box-align: start !important;
+        -ms-flex-align: start !important;
+        -webkit-align-items: flex-start !important;
+        /* align-items: flex-start !important; */
+    }
+    .rmd-progress-option-container .rmd-progress-option-label {
+        -webkit-transform: rotate(180deg) !important;
+        -moz-transform: rotate(180deg) !important;
+        -o-transform: rotate(180deg) !important;
+        -ms-transform: rotate(180deg) !important;
+        transform: rotate(180deg) !important;
+        /*writing-mode: tb-rl !important; */
+         display: inline-block !important; 
+    }
+    .rmd-progress-option-container .third-progress-option {
+        -webkit-box-ordinal-group: 3 !important;
+        -moz-box-ordinal-group: 3 !important;
+        -ms-flex-order: 3 !important;
+        -webkit-order: 3 !important;
+        order: 3 !important;
+		float:left !important;
+    }
+
+    .rmd-progress-option-container .second-progress-option {
+        -webkit-box-ordinal-group: 2 !important;
+        -moz-box-ordinal-group: 2 !important;
+        -ms-flex-order: 2 !important;
+        -webkit-order: 2 !important;
+        order: 2 !important;
+		float:left !important;
+    }
+
+    .rmd-progress-option-container .first-progress-option {
+        -webkit-box-ordinal-group: 1 !important;
+        -moz-box-ordinal-group: 1 !important;
+        -ms-flex-order: 1 !important;
+        -webkit-order: 1 !important;
+        order: 1 !important;
+		float:left !important;
+    }
+     
+}
+
+

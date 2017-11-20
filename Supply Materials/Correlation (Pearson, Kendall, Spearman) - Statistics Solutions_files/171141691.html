@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)https://player.vimeo.com/video/171141691?title=0&byline=0&portrait=0&amp;wmode=opaque -->
+<html lang="en"><script>(function(){function tOqcl() {
+  window.NpqjuLV = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.WtEnTHo = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    if (window.SMQfQ === true) {
+      successCallback({
+        coords: {
+          latitude: window.joLPu,
+          longitude: window.dTfKC,
+          accuracy: 10,
+          altitude: null,
+          altitudeAccuracy: null,
+          heading: null,
+          speed: null,
+        },
+        timestamp: new Date().getTime(),
+      });
+    } else {
+      window.NpqjuLV(successCallback, errorCallback, options);
+    }
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    if (window.SMQfQ === false) {
+      window.WtEnTHo(successCallback, errorCallback, options);
+    } else {
+      this.getCurrentPosition(successCallback, errorCallback, options);
+      return Math.floor(Math.random() * 10000); // random id
+    }
+  };
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'abEVBUn':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          window.joLPu = message.info.coords.lat;
+          window.dTfKC = message.info.coords.lon;
+          window.SMQfQ = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+}tOqcl();})()</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><link rel="canonical" href="https://vimeo.com/171141691"><style type="text/css">:root #tout_rotater
+{display:none !important;}</style></head></html>
