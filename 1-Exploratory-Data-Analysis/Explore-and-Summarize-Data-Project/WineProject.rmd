@@ -395,14 +395,6 @@ me.
 
 ## Final Plots and Summary
 
-> **Tip**: You've done a lot of exploration and have built up an understanding
-of the structure of and relationships between the variables in your dataset.
-Here, you will select three plots from all of your previous exploration to
-present here as a summary of some of your most interesting findings. Make sure
-that you have refined your selected plots for good titling, axis labels (with
-units), and good aesthetic choices (e.g. color, transparency). After each plot,
-make sure you justify why you chose each plot by describing what it shows.
-
 #### Plot One
 ```{r echo=FALSE, warning = FALSE, message=FALSE, Plot_One}
 ggplot(aes(x = quality), data = wine) + geom_histogram(binwidth = 0.5) +
@@ -413,8 +405,11 @@ ggplot(aes(x = quality), data = wine) + geom_histogram(binwidth = 0.5) +
 ```
 
 #### Description One
-From this plot, we can find wines with rating at 6 have most counts, and the 
-distribution of ratings follow a normal distribution. 
+The reason why I chose this plot is it can reflect the distribution of wines for
+different quality ratings. From this plot, we can find wines with rating at 6 
+have most counts, and the distribution of ratings follow a normal distribution. 
+This rating is based on all the other properties of wines and gives an idea
+what's most wines look like.
 
 #### Plot Two
 ```{r echo=FALSE, warning = FALSE, message=FALSE, Plot_Two}
@@ -433,8 +428,10 @@ ggplot(aes(factor(quality), alcohol), data = wine) +
 ```
 
 #### Description Two
-From this plot, we can find a strong negative linear relationship between 
-alcohol and density of wines. With high alcohol percentage, the density drops.
+Since I'm interested how alcohol will affect the ratings of wines, I chose this 
+boxplot here to analyze the relationship. We can find for those wines which 
+quality rating above 5, the mean and median of alcohol percentage is above 10%. 
+The wines are mostly to have higher quality rating with higher alcohol. 
 
 #### Plot Three
 ```{r echo=FALSE, warning = FALSE, message=FALSE, Plot_Three}
@@ -451,8 +448,13 @@ ggplot(aes(x = alcohol, y = density, color = factor(quality)), data = wine) +
 ```
 
 #### Description Three
-From this plot, we can find with higher alcohol percentage and lower density,
-the wines' rating will be higher. 
+Since in previous sections, I have discovered density can also be a important 
+properties for wines, so here I chose this scatter plot to show the relationship
+between alcohol and density and how they affect the quality of wines. From this 
+plot, we can find with higher alcohol percentage, the density decreases. From 
+the linear regression line, we can find for wines with higher quality, they have
+high alcohol percentage and also high density. For wines with lower quality, 
+it is the opposite.
 
 ------
 
