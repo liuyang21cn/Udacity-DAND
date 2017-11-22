@@ -149,7 +149,42 @@ noticable or unusual distributions in the dataset.
 ## Bivariate Plots Section
 
 In this part, let's take a look at some bivariate plots and try my interests
-on some variables of this dataset.
+on some variables of this dataset. First let's take a look at box plot for wine
+quality.
+```{r echo=FALSE, warning = FALSE, message=FALSE, alcohol_quality_boxplot}
+ggplot(aes(factor(quality), 
+            alcohol), 
+        data = wine) +
+  geom_jitter( alpha = .3)  +
+  geom_boxplot( alpha = .5,color = 'blue')+
+  stat_summary(fun.y = "mean", 
+               geom = "point", 
+               color = "red", 
+               shape = 8, 
+               size = 4)
+
+```     
+
+We can find wines with higher quality rating, above 6, among most of those, 
+the alcohol percentage is above 10%.
+
+```{r echo=FALSE, warning = FALSE, message=FALSE, pH_quality_boxplot}
+ggplot(aes(factor(quality), 
+            pH), 
+        data = wine) +
+  geom_jitter( alpha = .3)  +
+  geom_boxplot( alpha = .5,color = 'blue')+
+  stat_summary(fun.y = "mean", 
+               geom = "point", 
+               color = "red", 
+               shape = 8, 
+               size = 4)
+
+```       
+
+For the plot above, we can find wines with different quality rating, their pH
+is normally distributed and their is no strong relationship between each other.
+
 ```{r echo=FALSE, warning = FALSE, message=FALSE, pH_vs_alcohol}
 ggplot(aes(x = pH, y = alcohol), data = wine) + 
         geom_point(alpha = 0.25, 
@@ -172,8 +207,8 @@ ggplot(aes(x = residual.sugar, y = pH), data = wine) +
 
 ```
 
-The above graph is the scatter plot of residual.sugar vs. pH. In this graph, we didn't
-see any strong relationship between residual.sugar and pH.
+The above graph is the scatter plot of residual.sugar vs. pH. In this graph, 
+we didn't see any strong relationship between residual.sugar and pH.
 
 Density, volatile acidity and free sulfur dioxide may also support my 
 investigation. pH, alcohol and quality
@@ -192,9 +227,10 @@ Above is the scatter plot of volatile.acidity vs. pH. My assumption is volatile
 acidity will affect pH, but from the scatter plot above we didn't see a strong
 relationship between each other.
 
-```{r echo=FALSE, warning = FALSE, message=FALSE, total.sulfur.dioxide_vs_density}
+```{r echo=FALSE,warning = FALSE,message=FALSE,total.sulfur.dioxide_vs_density}
 ggplot(aes(x = total.sulfur.dioxide, y = density), data = wine) + 
-        xlim(quantile(wine$total.sulfur.dioxide, 0.01), quantile(wine$total.sulfur.dioxide, 0.99)) + 
+        xlim(quantile(wine$total.sulfur.dioxide, 0.01), 
+             quantile(wine$total.sulfur.dioxide, 0.99)) + 
         ylim(quantile(wine$density, 0.01), quantile(wine$density, 0.99)) + 
         geom_point(alpha = 0.25, 
                    position = position_jitter(h = 0),
@@ -257,18 +293,26 @@ wines, the density drops.
 In this section, I have ploted several scatter graphs with quality as factor.
 ```{r echo=FALSE, warning = FALSE, message=FALSE, ph_alcohol_quality}
 ggplot(aes(x = pH, y = alcohol, color = factor(quality)), data = wine) +
-        geom_point(position=position_jitter(), alpha=0.5) + 
+        geom_point(alpha = 0.8, size = 1) +
+        geom_smooth(method = "lm", se = FALSE, size=1)  +
+        scale_color_brewer(type='seq',
+                           guide=guide_legend(title='Quality')) +
         ylim(quantile(wine$alcohol, 0.005), quantile(wine$alcohol, 0.995)) +
         xlim(quantile(wine$pH, 0.005), quantile(wine$pH, 0.995))
 
 ```
 
 First graph above is the relationship between pH and alcohol. We can find it's 
-hard to observe any useful information which related to the quality of the wines.
+hard to observe any useful information which related to the quality of the 
+wines.
 
 ```{r echo=FALSE, warning = FALSE, message=FALSE, pH_volatile.acidity_quality}
-ggplot(aes(x = volatile.acidity, y = pH, color = factor(quality)), data = wine) +
-        geom_point(position=position_jitter(), alpha=0.5) +
+ggplot(aes(x = volatile.acidity, y = pH, color = factor(quality)), 
+       data = wine) +
+        geom_point(alpha = 0.8, size = 1) +
+        geom_smooth(method = "lm", se = FALSE, size=1)  +
+        scale_color_brewer(type='seq',
+                           guide=guide_legend(title='Quality')) +        
         xlim(0, 0.9)
 
 ```
@@ -279,8 +323,21 @@ around or under 0.25 g/dm^3, and spread with different pH.
 
 ```{r echo=FALSE, warning = FALSE, message=FALSE, alcohol_density_quality}
 ggplot(aes(x = alcohol, y = density, color = factor(quality)), data = wine) +
-        geom_point(position=position_jitter(), alpha=0.5) + 
+        geom_point(alpha = 0.8, size = 1) +
+        geom_smooth(method = "lm", se = FALSE, size=1)  +
+        scale_color_brewer(type='seq',
+                           guide=guide_legend(title='Quality')) +
         ylim(quantile(wine$density, 0.005), quantile(wine$density, 0.995))
+
+# sugestion code from udacity reviews 
+ggplot(aes(x = alcohol, 
+           y = residual.sugar, 
+           color = factor(quality)), 
+       data = wine) +
+        geom_point(alpha = 0.8, size = 1) +
+        geom_smooth(method = "lm", se = FALSE, size=1)  +
+        scale_color_brewer(type='seq',
+                           guide=guide_legend(title='Quality'))
 
 ```
 
@@ -290,7 +347,10 @@ wines with rating higher than 5 are more distributed with alcohol bigger than
 
 ```{r echo=FALSE, warning = FALSE, message=FALSE, pH_density_quality}
 ggplot(aes(x = pH, y = density, color = factor(quality)), data = wine) +
-        geom_point(position=position_jitter(), alpha=0.5) + 
+        geom_point(alpha = 0.8, size = 1) +
+        geom_smooth(method = "lm", se = FALSE, size=1)  +
+        scale_color_brewer(type='seq',
+                           guide=guide_legend(title='Quality')) +        
         ylim(quantile(wine$density, 0.005), quantile(wine$density, 0.995))
 
 ```
@@ -300,8 +360,12 @@ wines with rating bigger than 5 are spread out with different pH and density
 under 0.996 g/cm^3. 
 
 ```{r echo=FALSE, warning = FALSE, message=FALSE, total.sulfur.dioxide_density_quality}
-ggplot(aes(x = total.sulfur.dioxide, y = density, color = factor(quality)), data = wine) +
-        geom_point(position=position_jitter(), alpha=0.5) + 
+ggplot(aes(x = total.sulfur.dioxide, y = density, color = factor(quality)), 
+       data = wine) +
+        geom_point(alpha = 0.8, size = 1) +
+        geom_smooth(method = "lm", se = FALSE, size=1)  +
+        scale_color_brewer(type='seq',
+                           guide=guide_legend(title='Quality')) +
         ylim(quantile(wine$density, 0.005), quantile(wine$density, 0.995)) +
         xlim(0, 300)
 
@@ -309,7 +373,9 @@ ggplot(aes(x = total.sulfur.dioxide, y = density, color = factor(quality)), data
 
 The last graph here is the scatter plot between total sulfur dioxide and 
 density. We can find most of wines with rating higher than 5, their total 
-sulfur dioxide is under 200 mg/dm^3.
+sulfur dioxide is under 200 mg/dm^3. We can notice that their is a weak linear
+relationship between total sulfur dioxide and density. When sulfur dioxide 
+increases, the density increases.
 
 ## Multivariate Analysis
 
@@ -340,7 +406,9 @@ make sure you justify why you chose each plot by describing what it shows.
 #### Plot One
 ```{r echo=FALSE, warning = FALSE, message=FALSE, Plot_One}
 ggplot(aes(x = quality), data = wine) + geom_histogram(binwidth = 0.5) +
-          labs(title = 'Wine Quality Rating Counts')
+          labs(title = 'Wine Quality Rating Counts',
+               x = 'Wine Quality Rating (1 to 10)',
+               y = 'Wine Counts')
 
 ```
 
@@ -350,16 +418,18 @@ distribution of ratings follow a normal distribution.
 
 #### Plot Two
 ```{r echo=FALSE, warning = FALSE, message=FALSE, Plot_Two}
-ggplot(aes(x = alcohol, y = density), data = wine) + 
-        xlim(quantile(wine$alcohol, 0.01), quantile(wine$alcohol, 0.99)) + 
-        ylim(quantile(wine$density, 0.01), quantile(wine$density, 0.99)) + 
-        geom_point(alpha = 0.25, 
-                   position = position_jitter(h = 0),
-                   color = 'orange') +
-        stat_smooth(method = "lm", formula = y ~ x) +
-        labs(title = 'Alcohol vs. Density',
-             x = 'Alcohol (% by volume)',
-             y = 'Density (g / cm^3)')
+ggplot(aes(factor(quality), alcohol), data = wine) +
+        geom_jitter( alpha = .3)  +
+        geom_boxplot( alpha = .5,color = 'blue')+
+        stat_summary(fun.y = "mean", 
+                     geom = "point", 
+                     color = "red", 
+                     shape = 8, 
+                     size = 4) +
+        labs(title = 'Boxplot for Wine Quality With Alcohol Percentage',
+             x = 'Wine Quality Rating (1 to 10)',
+             y = 'Alcohol (% by volume)')
+
 ```
 
 #### Description Two
@@ -369,8 +439,14 @@ alcohol and density of wines. With high alcohol percentage, the density drops.
 #### Plot Three
 ```{r echo=FALSE, warning = FALSE, message=FALSE, Plot_Three}
 ggplot(aes(x = alcohol, y = density, color = factor(quality)), data = wine) +
-        geom_point(position=position_jitter(), alpha=0.5) + 
-        ylim(quantile(wine$density, 0.005), quantile(wine$density, 0.995))
+        geom_point(alpha = 0.8, size = 1) +
+        geom_smooth(method = "lm", se = FALSE, size=1)  +
+        scale_color_brewer(type='seq',
+                           guide=guide_legend(title='Quality')) +
+        ylim(quantile(wine$density, 0.005), quantile(wine$density, 0.995)) +
+        labs(title = 'Effection of Alcohol and Density to Quality',
+             x = 'Alcohol (% by volume)',
+             y = 'Density (g / cm^3)')
 
 ```
 
