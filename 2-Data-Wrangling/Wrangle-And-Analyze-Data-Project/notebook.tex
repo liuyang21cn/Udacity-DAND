@@ -288,7 +288,7 @@ Project}\label{wrangle-and-analyze-data-project}}
 \subsection{1. Gather Data}\label{gather-data}}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{c+c1}{\PYZsh{} Load packages}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{c+c1}{\PYZsh{} Load packages}
         \PY{k+kn}{import} \PY{n+nn}{tweepy}
         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         \PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
@@ -306,17 +306,17 @@ Project}\label{wrangle-and-analyze-data-project}}
 archive}\label{the-weratedogs-twitter-archive}}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{twitter\PYZhy{}archive\PYZhy{}enhanced.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{twitter\PYZhy{}archive\PYZhy{}enhanced.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}3}]:}              tweet\_id  in\_reply\_to\_status\_id  in\_reply\_to\_user\_id  \textbackslash{}
+{\color{outcolor}Out[{\color{outcolor}6}]:}              tweet\_id  in\_reply\_to\_status\_id  in\_reply\_to\_user\_id  \textbackslash{}
         0  892420643555336193                    NaN                  NaN   
         1  892177421306343426                    NaN                  NaN   
         2  891815181378084864                    NaN                  NaN   
@@ -370,7 +370,7 @@ archive}\label{the-weratedogs-twitter-archive}}
 \subsubsection{Image Predictions}\label{image-predictions}}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{tweet\PYZus{}image\PYZus{}prediction\PYZus{}url} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{https://d17h27t6h515a5.cloudfront.net/topher/2017/August/599fd2ad\PYZus{}image\PYZhy{}predictions/image\PYZhy{}predictions.tsv}\PY{l+s+s1}{\PYZsq{}}
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{tweet\PYZus{}image\PYZus{}prediction\PYZus{}url} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{https://d17h27t6h515a5.cloudfront.net/topher/2017/August/599fd2ad\PYZus{}image\PYZhy{}predictions/image\PYZhy{}predictions.tsv}\PY{l+s+s1}{\PYZsq{}}
         \PY{n}{response} \PY{o}{=} \PY{n}{requests}\PY{o}{.}\PY{n}{get}\PY{p}{(}\PY{n}{tweet\PYZus{}image\PYZus{}prediction\PYZus{}url}\PY{p}{)}
         \PY{k}{with} \PY{n+nb}{open}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{image\PYZus{}predictions.tsv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{mode} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{wb}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{k}{as} \PY{n}{file}\PY{p}{:}
             \PY{n}{file}\PY{o}{.}\PY{n}{write}\PY{p}{(}\PY{n}{response}\PY{o}{.}\PY{n}{content}\PY{p}{)}
@@ -381,7 +381,7 @@ archive}\label{the-weratedogs-twitter-archive}}
 \subsubsection{Tweet's Data Stats}\label{tweets-data-stats}}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{c+c1}{\PYZsh{} consumer\PYZus{}key, consumer\PYZus{}secret, access\PYZus{}token and access\PYZus{}secret should be achieved}
+{\color{incolor}In [{\color{incolor}8}]:} \PY{c+c1}{\PYZsh{} consumer\PYZus{}key, consumer\PYZus{}secret, access\PYZus{}token and access\PYZus{}secret should be achieved}
         \PY{c+c1}{\PYZsh{} by creating a twitter account and twitter app on https://apps.twitter.com/app}
         
         \PY{c+c1}{\PYZsh{} consumer\PYZus{}key = \PYZsq{}YOUR CONSUMER KEY\PYZsq{}}
@@ -397,7 +397,7 @@ archive}\label{the-weratedogs-twitter-archive}}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{c+c1}{\PYZsh{} Use this for retrive json data}
+{\color{incolor}In [{\color{incolor}9}]:} \PY{c+c1}{\PYZsh{} Use this for retrive json data}
         \PY{c+c1}{\PYZsh{} with open(\PYZsq{}tweet\PYZus{}json.txt\PYZsq{}, \PYZsq{}w\PYZsq{}) as outfile:  }
         \PY{c+c1}{\PYZsh{}     data = []}
         \PY{c+c1}{\PYZsh{}     for id in twitter\PYZus{}archive\PYZus{}enhanced[\PYZsq{}tweet\PYZus{}id\PYZsq{}]:}
@@ -411,11 +411,11 @@ archive}\label{the-weratedogs-twitter-archive}}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{c+c1}{\PYZsh{} Test if data was written successfully}
-        \PY{k}{with} \PY{n+nb}{open}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tweet\PYZus{}json.txt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{k}{as} \PY{n}{json\PYZus{}file}\PY{p}{:}  
-            \PY{n}{data} \PY{o}{=} \PY{n}{json}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{n}{json\PYZus{}file}\PY{p}{)}
-            \PY{k}{for} \PY{n}{tweet} \PY{o+ow}{in} \PY{n}{data}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{:}
-                \PY{n+nb}{print}\PY{p}{(}\PY{n}{tweet}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}10}]:} \PY{c+c1}{\PYZsh{} Test if data was written successfully}
+         \PY{k}{with} \PY{n+nb}{open}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tweet\PYZus{}json.txt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{k}{as} \PY{n}{json\PYZus{}file}\PY{p}{:}  
+             \PY{n}{data} \PY{o}{=} \PY{n}{json}\PY{o}{.}\PY{n}{load}\PY{p}{(}\PY{n}{json\PYZus{}file}\PY{p}{)}
+             \PY{k}{for} \PY{n}{tweet} \PY{o+ow}{in} \PY{n}{data}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{:}
+                 \PY{n+nb}{print}\PY{p}{(}\PY{n}{tweet}\PY{p}{)}
 \end{Verbatim}
 
 
@@ -428,90 +428,90 @@ archive}\label{the-weratedogs-twitter-archive}}
     \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{c+c1}{\PYZsh{} read json file}
-        \PY{n}{tweets} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}json}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tweet\PYZus{}json.txt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}11}]:} \PY{c+c1}{\PYZsh{} read json file}
+         \PY{n}{tweets} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}json}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tweet\PYZus{}json.txt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{tweets}\PY{o}{.}\PY{n}{tail}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{tweets}\PY{o}{.}\PY{n}{tail}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}9}]:}       contributors  coordinates          created\_at display\_text\_range  \textbackslash{}
-        2344           NaN          NaN 2015-11-16 00:24:50           [0, 120]   
-        2345           NaN          NaN 2015-11-16 00:04:52           [0, 137]   
-        2346           NaN          NaN 2015-11-15 23:21:54           [0, 130]   
-        2347           NaN          NaN 2015-11-15 23:05:30           [0, 139]   
-        2348           NaN          NaN 2015-11-15 22:32:08           [0, 131]   
-        
-                                                       entities  \textbackslash{}
-        2344  \{'hashtags': [], 'symbols': [], 'user\_mentions{\ldots}   
-        2345  \{'hashtags': [], 'symbols': [], 'user\_mentions{\ldots}   
-        2346  \{'hashtags': [], 'symbols': [], 'user\_mentions{\ldots}   
-        2347  \{'hashtags': [], 'symbols': [], 'user\_mentions{\ldots}   
-        2348  \{'hashtags': [], 'symbols': [], 'user\_mentions{\ldots}   
-        
-                                              extended\_entities  favorite\_count  \textbackslash{}
-        2344  \{'media': [\{'id': 666049244999131136, 'id\_str'{\ldots}             110   
-        2345  \{'media': [\{'id': 666044217047650304, 'id\_str'{\ldots}             306   
-        2346  \{'media': [\{'id': 666033409081393153, 'id\_str'{\ldots}             127   
-        2347  \{'media': [\{'id': 666029276303482880, 'id\_str'{\ldots}             131   
-        2348  \{'media': [\{'id': 666020881337073664, 'id\_str'{\ldots}            2531   
-        
-              favorited                                          full\_text  geo  \textbackslash{}
-        2344      False  Here we have a 1949 1st generation vulpix. Enj{\ldots}  NaN   
-        2345      False  This is a purebred Piers Morgan. Loves to Netf{\ldots}  NaN   
-        2346      False  Here is a very happy pup. Big fan of well-main{\ldots}  NaN   
-        2347      False  This is a western brown Mitsubishi terrier. Up{\ldots}  NaN   
-        2348      False  Here we have a Japanese Irish Setter. Lost eye{\ldots}  NaN   
-        
-                                    {\ldots}                          \textbackslash{}
-        2344                        {\ldots}                           
-        2345                        {\ldots}                           
-        2346                        {\ldots}                           
-        2347                        {\ldots}                           
-        2348                        {\ldots}                           
-        
-              possibly\_sensitive\_appealable  quoted\_status quoted\_status\_id  \textbackslash{}
-        2344                            0.0            NaN              NaN   
-        2345                            0.0            NaN              NaN   
-        2346                            0.0            NaN              NaN   
-        2347                            0.0            NaN              NaN   
-        2348                            0.0            NaN              NaN   
-        
-              quoted\_status\_id\_str  retweet\_count  retweeted  retweeted\_status  \textbackslash{}
-        2344                   NaN             40      False               NaN   
-        2345                   NaN            143      False               NaN   
-        2346                   NaN             46      False               NaN   
-        2347                   NaN             47      False               NaN   
-        2348                   NaN            527      False               NaN   
-        
-                                                         source truncated  \textbackslash{}
-        2344  <a href="http://twitter.com/download/iphone" r{\ldots}     False   
-        2345  <a href="http://twitter.com/download/iphone" r{\ldots}     False   
-        2346  <a href="http://twitter.com/download/iphone" r{\ldots}     False   
-        2347  <a href="http://twitter.com/download/iphone" r{\ldots}     False   
-        2348  <a href="http://twitter.com/download/iphone" r{\ldots}     False   
-        
-                                                           user  
-        2344  \{'id': 4196983835, 'id\_str': '4196983835', 'na{\ldots}  
-        2345  \{'id': 4196983835, 'id\_str': '4196983835', 'na{\ldots}  
-        2346  \{'id': 4196983835, 'id\_str': '4196983835', 'na{\ldots}  
-        2347  \{'id': 4196983835, 'id\_str': '4196983835', 'na{\ldots}  
-        2348  \{'id': 4196983835, 'id\_str': '4196983835', 'na{\ldots}  
-        
-        [5 rows x 31 columns]
+{\color{outcolor}Out[{\color{outcolor}12}]:}       contributors  coordinates          created\_at display\_text\_range  \textbackslash{}
+         2344           NaN          NaN 2015-11-16 00:24:50           [0, 120]   
+         2345           NaN          NaN 2015-11-16 00:04:52           [0, 137]   
+         2346           NaN          NaN 2015-11-15 23:21:54           [0, 130]   
+         2347           NaN          NaN 2015-11-15 23:05:30           [0, 139]   
+         2348           NaN          NaN 2015-11-15 22:32:08           [0, 131]   
+         
+                                                        entities  \textbackslash{}
+         2344  \{'hashtags': [], 'symbols': [], 'user\_mentions{\ldots}   
+         2345  \{'hashtags': [], 'symbols': [], 'user\_mentions{\ldots}   
+         2346  \{'hashtags': [], 'symbols': [], 'user\_mentions{\ldots}   
+         2347  \{'hashtags': [], 'symbols': [], 'user\_mentions{\ldots}   
+         2348  \{'hashtags': [], 'symbols': [], 'user\_mentions{\ldots}   
+         
+                                               extended\_entities  favorite\_count  \textbackslash{}
+         2344  \{'media': [\{'id': 666049244999131136, 'id\_str'{\ldots}             110   
+         2345  \{'media': [\{'id': 666044217047650304, 'id\_str'{\ldots}             306   
+         2346  \{'media': [\{'id': 666033409081393153, 'id\_str'{\ldots}             127   
+         2347  \{'media': [\{'id': 666029276303482880, 'id\_str'{\ldots}             131   
+         2348  \{'media': [\{'id': 666020881337073664, 'id\_str'{\ldots}            2531   
+         
+               favorited                                          full\_text  geo  \textbackslash{}
+         2344      False  Here we have a 1949 1st generation vulpix. Enj{\ldots}  NaN   
+         2345      False  This is a purebred Piers Morgan. Loves to Netf{\ldots}  NaN   
+         2346      False  Here is a very happy pup. Big fan of well-main{\ldots}  NaN   
+         2347      False  This is a western brown Mitsubishi terrier. Up{\ldots}  NaN   
+         2348      False  Here we have a Japanese Irish Setter. Lost eye{\ldots}  NaN   
+         
+                                     {\ldots}                          \textbackslash{}
+         2344                        {\ldots}                           
+         2345                        {\ldots}                           
+         2346                        {\ldots}                           
+         2347                        {\ldots}                           
+         2348                        {\ldots}                           
+         
+               possibly\_sensitive\_appealable  quoted\_status quoted\_status\_id  \textbackslash{}
+         2344                            0.0            NaN              NaN   
+         2345                            0.0            NaN              NaN   
+         2346                            0.0            NaN              NaN   
+         2347                            0.0            NaN              NaN   
+         2348                            0.0            NaN              NaN   
+         
+               quoted\_status\_id\_str  retweet\_count  retweeted  retweeted\_status  \textbackslash{}
+         2344                   NaN             40      False               NaN   
+         2345                   NaN            143      False               NaN   
+         2346                   NaN             46      False               NaN   
+         2347                   NaN             47      False               NaN   
+         2348                   NaN            527      False               NaN   
+         
+                                                          source truncated  \textbackslash{}
+         2344  <a href="http://twitter.com/download/iphone" r{\ldots}     False   
+         2345  <a href="http://twitter.com/download/iphone" r{\ldots}     False   
+         2346  <a href="http://twitter.com/download/iphone" r{\ldots}     False   
+         2347  <a href="http://twitter.com/download/iphone" r{\ldots}     False   
+         2348  <a href="http://twitter.com/download/iphone" r{\ldots}     False   
+         
+                                                            user  
+         2344  \{'id': 4196983835, 'id\_str': '4196983835', 'na{\ldots}  
+         2345  \{'id': 4196983835, 'id\_str': '4196983835', 'na{\ldots}  
+         2346  \{'id': 4196983835, 'id\_str': '4196983835', 'na{\ldots}  
+         2347  \{'id': 4196983835, 'id\_str': '4196983835', 'na{\ldots}  
+         2348  \{'id': 4196983835, 'id\_str': '4196983835', 'na{\ldots}  
+         
+         [5 rows x 31 columns]
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{tweets}\PY{o}{.}\PY{n}{describe}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{tweets}\PY{o}{.}\PY{n}{describe}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}10}]:}        contributors  coordinates  favorite\_count  geo            id  \textbackslash{}
+{\color{outcolor}Out[{\color{outcolor}13}]:}        contributors  coordinates  favorite\_count  geo            id  \textbackslash{}
          count           0.0          0.0     2349.000000  0.0  2.349000e+03   
          mean            NaN          NaN     8109.720732  NaN  7.424674e+17   
          std             NaN          NaN    12051.729881  NaN  6.840987e+16   
@@ -563,7 +563,7 @@ archive}\label{the-weratedogs-twitter-archive}}
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{tweets}\PY{o}{.}\PY{n}{info}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{tweets}\PY{o}{.}\PY{n}{info}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
@@ -608,18 +608,18 @@ memory usage: 523.0+ KB
     \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}12}]:} \PY{c+c1}{\PYZsh{} Keep only tweet ID, retweet count, and favorite count}
+{\color{incolor}In [{\color{incolor}15}]:} \PY{c+c1}{\PYZsh{} Keep only tweet ID, retweet count, and favorite count}
          \PY{n}{tweets} \PY{o}{=} \PY{n}{tweets}\PY{p}{[}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{user}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{favorite\PYZus{}count}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{retweet\PYZus{}count}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{]}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{tweets}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}16}]:} \PY{n}{tweets}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}13}]:}                                                 user  favorite\_count  \textbackslash{}
+{\color{outcolor}Out[{\color{outcolor}16}]:}                                                 user  favorite\_count  \textbackslash{}
          0  \{'id': 4196983835, 'id\_str': '4196983835', 'na{\ldots}           39334   
          1  \{'id': 4196983835, 'id\_str': '4196983835', 'na{\ldots}           33671   
          2  \{'id': 4196983835, 'id\_str': '4196983835', 'na{\ldots}           25363   
@@ -638,7 +638,7 @@ memory usage: 523.0+ KB
 \subsection{2. Assessing Data}\label{assessing-data}}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced}\PY{o}{.}\PY{n}{info}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}17}]:} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced}\PY{o}{.}\PY{n}{info}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
@@ -690,55 +690,67 @@ tweets - User id displayed in wrong format
 \subsubsection{Quality}\label{quality}}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}15}]:} \PY{c+c1}{\PYZsh{} Make a copy of twitter\PYZus{}archive\PYZus{}enhanced}
+{\color{incolor}In [{\color{incolor}18}]:} \PY{c+c1}{\PYZsh{} Make a copy of twitter\PYZus{}archive\PYZus{}enhanced}
          \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean} \PY{o}{=} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}16}]:} \PY{c+c1}{\PYZsh{} 1. Remove the reply tweets and drop in\PYZus{}reply\PYZus{}to\PYZus{}status\PYZus{}id and in\PYZus{}reply\PYZus{}to\PYZus{}user\PYZus{}id column}
+{\color{incolor}In [{\color{incolor}19}]:} \PY{c+c1}{\PYZsh{} 1. Remove the reply tweets and drop in\PYZus{}reply\PYZus{}to\PYZus{}status\PYZus{}id and in\PYZus{}reply\PYZus{}to\PYZus{}user\PYZus{}id column}
+         \PY{c+c1}{\PYZsh{} only keep the tweets that in\PYZus{}reply\PYZus{}to\PYZus{}user\PYZus{}id is NA then drop the two columns}
          \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean} \PY{o}{=} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{p}{[}\PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{o}{.}\PY{n}{in\PYZus{}reply\PYZus{}to\PYZus{}user\PYZus{}id}\PY{o}{.}\PY{n}{isna}\PY{p}{(}\PY{p}{)}\PY{p}{]}
          \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean} \PY{o}{=} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{o}{.}\PY{n}{drop}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{in\PYZus{}reply\PYZus{}to\PYZus{}status\PYZus{}id}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{in\PYZus{}reply\PYZus{}to\PYZus{}user\PYZus{}id}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{axis} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}17}]:} \PY{c+c1}{\PYZsh{} 2. Remove the reply retweets and drop retweeted\PYZus{}status\PYZus{}id, }
+{\color{incolor}In [{\color{incolor}20}]:} \PY{c+c1}{\PYZsh{} 2. Remove the reply retweets and drop retweeted\PYZus{}status\PYZus{}id, }
          \PY{c+c1}{\PYZsh{} retweeted\PYZus{}status\PYZus{}user\PYZus{}id and retweeted\PYZus{}status\PYZus{}timestamp column}
+         \PY{c+c1}{\PYZsh{} only keep the tweets that retweeted\PYZus{}status\PYZus{}id is NA then drop the two columns}
          \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean} \PY{o}{=} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{p}{[}\PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{o}{.}\PY{n}{retweeted\PYZus{}status\PYZus{}id}\PY{o}{.}\PY{n}{isna}\PY{p}{(}\PY{p}{)}\PY{p}{]}
          \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean} \PY{o}{=} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{o}{.}\PY{n}{drop}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{retweeted\PYZus{}status\PYZus{}id}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{retweeted\PYZus{}status\PYZus{}user\PYZus{}id}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{retweeted\PYZus{}status\PYZus{}timestamp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{,} \PY{n}{axis} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}18}]:} \PY{c+c1}{\PYZsh{} 3. Correct format of timestamp }
+{\color{incolor}In [{\color{incolor}21}]:} \PY{c+c1}{\PYZsh{} 3. Correct format of timestamp }
+         \PY{c+c1}{\PYZsh{} use to\PYZus{}datetime function to clean timestamp column}
          \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{timestamp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{to\PYZus{}datetime}\PY{p}{(}\PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{timestamp}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}19}]:} \PY{c+c1}{\PYZsh{} 4 \PYZam{} 5. Uncorrect rating and extract short url instead of using the expanded url}
+{\color{incolor}In [{\color{incolor}22}]:} \PY{c+c1}{\PYZsh{} 4 \PYZam{} 5. Uncorrect rating and extract short url instead of using the expanded url}
          \PY{k+kn}{from} \PY{n+nn}{fractions} \PY{k}{import} \PY{n}{Fraction}
          \PY{k}{def} \PY{n+nf}{clean\PYZus{}ratings\PYZus{}and\PYZus{}urls}\PY{p}{(}\PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{p}{)}\PY{p}{:}
+             \PY{c+c1}{\PYZsh{} achieve the text from text column}
              \PY{n}{text} \PY{o}{=} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{o}{.}\PY{n}{text}
+             \PY{c+c1}{\PYZsh{} replace \PYZbs{}n \PYZbs{}t , with space}
              \PY{n}{text} \PY{o}{=} \PY{n}{text}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ }\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
              \PY{n}{text} \PY{o}{=} \PY{n}{text}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ }\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
              \PY{n}{text} \PY{o}{=} \PY{n}{text}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{,}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ }\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}   
+             \PY{c+c1}{\PYZsh{} split the text with space for further extraction}
              \PY{n}{text} \PY{o}{=} \PY{n}{text}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ }\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+             \PY{c+c1}{\PYZsh{} set up the numerator and denominator for extract ratings}
              \PY{n}{numerator}\PY{p}{,} \PY{n}{denominator}\PY{p}{,} \PY{n}{url} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{k+kc}{None}
              \PY{k}{for} \PY{n}{s} \PY{o+ow}{in} \PY{n}{text}\PY{p}{:}
+             \PY{c+c1}{\PYZsh{} for string in text list, if \PYZsq{}t.co\PYZsq{} in string means it\PYZsq{}s a url}
                  \PY{k}{if} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{t.co}\PY{l+s+s1}{\PYZsq{}} \PY{o+ow}{in} \PY{n}{s}\PY{p}{:}
                      \PY{n}{url} \PY{o}{=} \PY{n}{s}
                  \PY{k}{else}\PY{p}{:}
                      \PY{k}{try}\PY{p}{:}
+                         \PY{c+c1}{\PYZsh{} try to put string into fucntion fraction, if the string can be }
+                         \PY{c+c1}{\PYZsh{} evaluated as a rational number, then we can get numerator and denominator}
                          \PY{n}{num} \PY{o}{=} \PY{n}{Fraction}\PY{p}{(}\PY{n}{s}\PY{p}{)}
                          \PY{n}{numerator} \PY{o}{=} \PY{n}{num}\PY{o}{.}\PY{n}{numerator}
                          \PY{n}{denominator} \PY{o}{=} \PY{n}{num}\PY{o}{.}\PY{n}{denominator}
+                         \PY{c+c1}{\PYZsh{} change the base ratings to 10 }
                          \PY{k}{if} \PY{n}{denominator} \PY{o}{!=} \PY{l+m+mi}{10}\PY{p}{:}
                              \PY{n}{numerator} \PY{o}{*}\PY{o}{=} \PY{l+m+mi}{10}\PY{o}{/}\PY{n}{denominator}
                              \PY{n}{denominator} \PY{o}{=} \PY{l+m+mi}{10}
                      \PY{k}{except}\PY{p}{:}
                          \PY{k}{pass}
+             \PY{c+c1}{\PYZsh{} update numerator, denominator, and url}
              \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{rating\PYZus{}numerator}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n+nb}{int}\PY{p}{(}\PY{n}{numerator}\PY{p}{)}
              \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{rating\PYZus{}denominator}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{denominator}
              \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{url}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{url} 
@@ -749,8 +761,9 @@ tweets - User id displayed in wrong format
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}20}]:} \PY{c+c1}{\PYZsh{} 6. Missing Name}
+{\color{incolor}In [{\color{incolor}23}]:} \PY{c+c1}{\PYZsh{} 6. Missing Name}
          \PY{k}{def} \PY{n+nf}{clean\PYZus{}dog\PYZus{}name}\PY{p}{(}\PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{p}{)}\PY{p}{:}
+             \PY{c+c1}{\PYZsh{} change all the wrong names to unknown}
              \PY{k}{if} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{name}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{.}\PY{n}{islower}\PY{p}{(}\PY{p}{)}\PY{p}{:}
                  \PY{k}{return} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Unknown}\PY{l+s+s1}{\PYZsq{}}
              \PY{k}{elif} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{name}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{None}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
@@ -764,7 +777,7 @@ tweets - User id displayed in wrong format
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}20}]:}                 tweet\_id           timestamp  \textbackslash{}
+{\color{outcolor}Out[{\color{outcolor}23}]:}                 tweet\_id           timestamp  \textbackslash{}
          2306  666835007768551424 2015-11-18 04:27:09   
          2307  666826780179869698 2015-11-18 03:54:28   
          2308  666817836334096384 2015-11-18 03:18:55   
@@ -1078,21 +1091,26 @@ tweets - User id displayed in wrong format
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}21}]:} \PY{c+c1}{\PYZsh{} 7. Take a look at twitter\PYZus{}archive\PYZus{}enhanced data, we can find all}
+{\color{incolor}In [{\color{incolor}24}]:} \PY{c+c1}{\PYZsh{} 7. Take a look at twitter\PYZus{}archive\PYZus{}enhanced data, we can find all}
          \PY{c+c1}{\PYZsh{} data are either none or same as column name, we can change it to }
          \PY{c+c1}{\PYZsh{} 0 as none or 1 as indicated by column name}
          \PY{k}{for} \PY{n}{col} \PY{o+ow}{in} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{doggo}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{floofer}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{pupper}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{puppo}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{:}
+             \PY{c+c1}{\PYZsh{} set all these columns to zero}
              \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{p}{[}\PY{n}{col}\PY{p}{]} \PY{o}{=} \PY{l+m+mi}{0}
+             \PY{c+c1}{\PYZsh{} for those has same column name as entry, create a mask}
              \PY{n}{mask} \PY{o}{=} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced}\PY{p}{[}\PY{n}{col}\PY{p}{]} \PY{o}{==} \PY{n}{col}
+             \PY{c+c1}{\PYZsh{} apply the mask}
              \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{o}{.}\PY{n}{loc}\PY{p}{[}\PY{n}{mask}\PY{p}{,} \PY{n}{col}\PY{p}{]} \PY{o}{=} \PY{l+m+mi}{1}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}22}]:} \PY{c+c1}{\PYZsh{} 8. Source should not include link}
+{\color{incolor}In [{\color{incolor}25}]:} \PY{c+c1}{\PYZsh{} 8. Source should not include link}
          \PY{k}{def} \PY{n+nf}{clean\PYZus{}source}\PY{p}{(}\PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{p}{)}\PY{p}{:}
+             \PY{c+c1}{\PYZsh{} extract the source text}
              \PY{n}{text} \PY{o}{=} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{o}{.}\PY{n}{source}
              \PY{k}{try}\PY{p}{:}
+                 \PY{c+c1}{\PYZsh{} if \PYZsq{}\PYZgt{}\PYZsq{} is found, means the source is in [left+1:\PYZhy{}4]}
                  \PY{n}{left} \PY{o}{=} \PY{n}{text}\PY{o}{.}\PY{n}{find}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZgt{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
                  \PY{k}{return} \PY{n}{text}\PY{p}{[}\PY{n}{left}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{p}{]}
              \PY{k}{except}\PY{p}{:}
@@ -1103,12 +1121,12 @@ tweets - User id displayed in wrong format
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}23}]:} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{l+m+mi}{50}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}26}]:} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{l+m+mi}{50}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}23}]:}               tweet\_id           timestamp              source  \textbackslash{}
+{\color{outcolor}Out[{\color{outcolor}26}]:}               tweet\_id           timestamp              source  \textbackslash{}
          0   892420643555336193 2017-08-01 16:23:56  Twitter for iPhone   
          1   892177421306343426 2017-08-01 00:17:27  Twitter for iPhone   
          2   891815181378084864 2017-07-31 00:18:03  Twitter for iPhone   
@@ -1373,14 +1391,14 @@ tweets - User id displayed in wrong format
 \subsubsection{Tidyness}\label{tidyness}}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}24}]:} \PY{c+c1}{\PYZsh{} 1. Unuseful dog tag doggo floofer pupper puppo, remove those columns}
+{\color{incolor}In [{\color{incolor}27}]:} \PY{c+c1}{\PYZsh{} 1. Unuseful dog tag doggo floofer pupper puppo, remove those columns}
          \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean} \PY{o}{=} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{o}{.}\PY{n}{drop}\PY{p}{(}\PY{p}{[}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{doggo}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{floofer}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{pupper}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{puppo}\PY{l+s+s2}{\PYZdq{}}\PY{p}{]}\PY{p}{,} \PY{n}{axis} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{)}
          \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}24}]:}              tweet\_id           timestamp              source  \textbackslash{}
+{\color{outcolor}Out[{\color{outcolor}27}]:}              tweet\_id           timestamp              source  \textbackslash{}
          0  892420643555336193 2017-08-01 16:23:56  Twitter for iPhone   
          1  892177421306343426 2017-08-01 00:17:27  Twitter for iPhone   
          2  891815181378084864 2017-07-31 00:18:03  Twitter for iPhone   
@@ -1410,20 +1428,21 @@ tweets - User id displayed in wrong format
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}25}]:} \PY{c+c1}{\PYZsh{} 2. Clean user id in tweets data}
+{\color{incolor}In [{\color{incolor}28}]:} \PY{c+c1}{\PYZsh{} 2. Clean user id in tweets data}
          \PY{n}{tweets\PYZus{}clean} \PY{o}{=} \PY{n}{tweets}\PY{o}{.}\PY{n}{copy}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}26}]:} \PY{k+kn}{from} \PY{n+nn}{pandas}\PY{n+nn}{.}\PY{n+nn}{io}\PY{n+nn}{.}\PY{n+nn}{json} \PY{k}{import} \PY{n}{json\PYZus{}normalize}
+{\color{incolor}In [{\color{incolor}29}]:} \PY{k+kn}{from} \PY{n+nn}{pandas}\PY{n+nn}{.}\PY{n+nn}{io}\PY{n+nn}{.}\PY{n+nn}{json} \PY{k}{import} \PY{n}{json\PYZus{}normalize}
+         \PY{c+c1}{\PYZsh{} use json\PYZus{}normalize to extract a tidy form of tweets\PYZus{}clean[\PYZsq{}user\PYZsq{}]}
          \PY{n}{user\PYZus{}info} \PY{o}{=} \PY{n}{json\PYZus{}normalize}\PY{p}{(}\PY{n}{tweets\PYZus{}clean}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{user}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
          \PY{n}{user\PYZus{}info}\PY{o}{.}\PY{n}{columns}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}26}]:} Index(['contributors\_enabled', 'created\_at', 'default\_profile',
+{\color{outcolor}Out[{\color{outcolor}29}]:} Index(['contributors\_enabled', 'created\_at', 'default\_profile',
                 'default\_profile\_image', 'description', 'entities.description.urls',
                 'entities.url.urls', 'favourites\_count', 'follow\_request\_sent',
                 'followers\_count', 'following', 'friends\_count', 'geo\_enabled',
@@ -1441,13 +1460,14 @@ tweets - User id displayed in wrong format
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}27}]:} \PY{n}{tweets\PYZus{}clean}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{user}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{user\PYZus{}info}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{id}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}30}]:} \PY{c+c1}{\PYZsh{} update tweets\PYZus{}clean[\PYZsq{}user\PYZsq{}] to id only}
+         \PY{n}{tweets\PYZus{}clean}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{user}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{user\PYZus{}info}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{id}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
          \PY{n}{tweets\PYZus{}clean}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}27}]:}          user  favorite\_count  retweet\_count
+{\color{outcolor}Out[{\color{outcolor}30}]:}          user  favorite\_count  retweet\_count
          0  4196983835           39334           8786
          1  4196983835           33671           6439
          2  4196983835           25363           4270
@@ -1464,7 +1484,7 @@ Project}\label{storing-analyzing-and-visualizing-data-for-this-project}}
 csv}\label{store-twitter_archive_enhanced_clean-to-csv}}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}28}]:} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{o}{.}\PY{n}{to\PYZus{}csv}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{twitter\PYZus{}archive\PYZus{}master.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}31}]:} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{o}{.}\PY{n}{to\PYZus{}csv}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{twitter\PYZus{}archive\PYZus{}master.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
          \PY{n}{tweets\PYZus{}clean}\PY{o}{.}\PY{n}{to\PYZus{}csv}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tweets\PYZus{}stats.csv}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
@@ -1473,7 +1493,7 @@ csv}\label{store-twitter_archive_enhanced_clean-to-csv}}
 \paragraph{Insights}\label{insights}}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}29}]:} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{o}{.}\PY{n}{info}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}32}]:} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{o}{.}\PY{n}{info}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
@@ -1495,16 +1515,86 @@ memory usage: 163.8+ KB
 
     \end{Verbatim}
 
-    Insights 1: There are 2097 original tweets from WeRateDogs after we
-wrangle the data
-
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}30}]:} \PY{n}{tweets\PYZus{}clean}\PY{o}{.}\PY{n}{describe}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}33}]:} \PY{n}{twitter\PYZus{}archive\PYZus{}enhanced\PYZus{}clean}\PY{o}{.}\PY{n}{timestamp}\PY{o}{.}\PY{n}{max}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}30}]:}                user  favorite\_count  retweet\_count
+{\color{outcolor}Out[{\color{outcolor}33}]:} <bound method Series.max of 0      2017-08-01 16:23:56
+         1      2017-08-01 00:17:27
+         2      2017-07-31 00:18:03
+         3      2017-07-30 15:58:51
+         4      2017-07-29 16:00:24
+         5      2017-07-29 00:08:17
+         6      2017-07-28 16:27:12
+         7      2017-07-28 00:22:40
+         8      2017-07-27 16:25:51
+         9      2017-07-26 15:59:51
+         10     2017-07-26 00:31:25
+         11     2017-07-25 16:11:53
+         12     2017-07-25 01:55:32
+         13     2017-07-25 00:10:02
+         14     2017-07-24 17:02:04
+         15     2017-07-24 00:19:32
+         16     2017-07-23 00:22:39
+         17     2017-07-22 16:56:37
+         18     2017-07-22 00:23:06
+         20     2017-07-20 16:49:33
+         21     2017-07-19 16:06:48
+         22     2017-07-19 03:39:09
+         23     2017-07-19 00:47:34
+         24     2017-07-18 16:08:03
+         25     2017-07-18 00:07:08
+         26     2017-07-17 16:17:36
+         27     2017-07-16 23:58:41
+         28     2017-07-16 20:14:00
+         29     2017-07-15 23:25:31
+         31     2017-07-15 16:17:19
+                        {\ldots}        
+         2326   2015-11-17 00:24:19
+         2327   2015-11-17 00:06:54
+         2328   2015-11-16 23:23:41
+         2329   2015-11-16 21:54:18
+         2330   2015-11-16 21:10:36
+         2331   2015-11-16 20:32:58
+         2332   2015-11-16 20:01:42
+         2333   2015-11-16 19:31:45
+         2334   2015-11-16 16:37:02
+         2335   2015-11-16 16:11:11
+         2336   2015-11-16 15:14:19
+         2337   2015-11-16 14:57:41
+         2338   2015-11-16 04:02:55
+         2339   2015-11-16 03:55:04
+         2340   2015-11-16 03:44:34
+         2341   2015-11-16 03:22:39
+         2342   2015-11-16 02:38:37
+         2343   2015-11-16 01:59:36
+         2344   2015-11-16 01:52:02
+         2345   2015-11-16 01:22:45
+         2346   2015-11-16 01:01:59
+         2347   2015-11-16 00:55:59
+         2348   2015-11-16 00:49:46
+         2349   2015-11-16 00:35:11
+         2350   2015-11-16 00:30:50
+         2351   2015-11-16 00:24:50
+         2352   2015-11-16 00:04:52
+         2353   2015-11-15 23:21:54
+         2354   2015-11-15 23:05:30
+         2355   2015-11-15 22:32:08
+         Name: timestamp, Length: 2097, dtype: datetime64[ns]>
+\end{Verbatim}
+            
+    Insights 1: There are 2097 original tweets from WeRateDogs after we
+wrangle the data
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}34}]:} \PY{n}{tweets\PYZus{}clean}\PY{o}{.}\PY{n}{describe}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}34}]:}                user  favorite\_count  retweet\_count
          count  2.349000e+03     2349.000000    2349.000000
          mean   4.196984e+09     8109.720732    3097.263942
          std    0.000000e+00    12051.729881    5133.834333
@@ -1525,38 +1615,40 @@ is 3097.
 \paragraph{Visualization}\label{visualization}}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}37}]:} \PY{c+c1}{\PYZsh{} Use seaborn package to draw boxplot of tweets data to visualize it.}
+{\color{incolor}In [{\color{incolor}38}]:} \PY{c+c1}{\PYZsh{} Use seaborn package to draw boxplot of tweets data to visualize it.}
          \PY{k+kn}{import} \PY{n+nn}{seaborn} \PY{k}{as} \PY{n+nn}{sns}
-         \PY{k+kn}{import} \PY{n+nn}{matplotlib}
+         \PY{k+kn}{import} \PY{n+nn}{matplotlib} \PY{k}{as} \PY{n+nn}{plt}
          \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}38}]:} \PY{n}{sns}\PY{o}{.}\PY{n}{boxplot}\PY{p}{(}\PY{n}{x} \PY{o}{=} \PY{n}{tweets\PYZus{}clean}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{favorite\PYZus{}count}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}40}]:} \PY{n}{ax1} \PY{o}{=} \PY{n}{sns}\PY{o}{.}\PY{n}{boxplot}\PY{p}{(}\PY{n}{x} \PY{o}{=} \PY{n}{tweets\PYZus{}clean}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{favorite\PYZus{}count}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+         \PY{n}{ax1}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{n}{ylabel} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{favorite\PYZus{}tweets}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}38}]:} <matplotlib.axes.\_subplots.AxesSubplot at 0x11c0e8048>
-\end{Verbatim}
-            
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_48_1.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}39}]:} \PY{n}{sns}\PY{o}{.}\PY{n}{boxplot}\PY{p}{(}\PY{n}{x} \PY{o}{=} \PY{n}{tweets\PYZus{}clean}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{retweet\PYZus{}count}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}39}]:} <matplotlib.axes.\_subplots.AxesSubplot at 0x11c0bd668>
+{\color{outcolor}Out[{\color{outcolor}40}]:} [Text(0,0.5,'favorite\_tweets')]
 \end{Verbatim}
             
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_49_1.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}41}]:} \PY{n}{ax2} \PY{o}{=} \PY{n}{sns}\PY{o}{.}\PY{n}{boxplot}\PY{p}{(}\PY{n}{x} \PY{o}{=} \PY{n}{tweets\PYZus{}clean}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{retweet\PYZus{}count}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+         \PY{n}{ax2}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{n}{ylabel} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tetweet\PYZus{}tweets}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}41}]:} [Text(0,0.5,'tetweet\_tweets')]
+\end{Verbatim}
+            
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_50_1.png}
     \end{center}
     { \hspace*{\fill} \\}
     
